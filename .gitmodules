@@ -67,3 +67,24 @@
 [submodule "bundle/vim-yankring"]
 	path = bundle/vim-yankring
 	url = git://github.com/chrismetcalf/vim-yankring.git
+[submodule "bundle/argtextobj.vim"]
+	path = bundle/argtextobj.vim
+	url = git://github.com/vim-scripts/argtextobj.vim.git
+[submodule "bundle/vim-indent-object"]
+	path = bundle/vim-indent-object
+	url = git://github.com/michaeljsmith/vim-indent-object.git
+[submodule "bundle/vim-matchit"]
+	path = bundle/vim-matchit
+	url = git://github.com/mirell/vim-matchit.git
+[submodule "bundle/vim-syntax-haskell-cabal"]
+	path = bundle/vim-syntax-haskell-cabal
+	url = git://github.com/Twinside/vim-syntax-haskell-cabal.git
+[submodule "bundle/haskellmode-vim"]
+	path = bundle/haskellmode-vim
+	url = git://github.com/lukerandall/haskellmode-vim.git
+[submodule "bundle/hammer.vim"]
+	path = bundle/hammer.vim
+	url = git://github.com/robgleeson/hammer.vim.git
+[submodule "bundle/vim-preview"]
+	path = bundle/vim-preview
+	url = git://github.com/greyblake/vim-preview.git

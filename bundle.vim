@@ -15,7 +15,6 @@ let g:delimitMate_expand_cr = 1
 
 " nerdtree
 nmap <C-P> :NERDTreeToggle<CR>
-nmap <leader>p :NERDTreeFind<CR>
 
 " nerdcommenter
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
