@@ -24,8 +24,6 @@ What's included
 
   Command: `,a` 
 
-- argtextobj
-
 - haskellmode-vim
 
 - molokai

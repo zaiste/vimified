@@ -67,9 +67,6 @@
 [submodule "bundle/vim-yankring"]
 	path = bundle/vim-yankring
 	url = git://github.com/chrismetcalf/vim-yankring.git
-[submodule "bundle/argtextobj.vim"]
-	path = bundle/argtextobj.vim
-	url = git://github.com/vim-scripts/argtextobj.vim.git
 [submodule "bundle/vim-indent-object"]
 	path = bundle/vim-indent-object
 	url = git://github.com/michaeljsmith/vim-indent-object.git
