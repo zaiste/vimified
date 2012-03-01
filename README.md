@@ -10,9 +10,12 @@ How to install
 
     cd 
     git clone git://github.com/zaiste/vimified.git
-    ln -sfn vimified .vim
-    ln -sfn vimified/vimrc .vimrc
-
+    ln -sfn vimified ~/.vim
+    ln -sfn vimified/vimrc ~/.vimrc
+    cd vimified
+    git submodule sync
+    git submodule update
+    
 
 What's included
 ---------------
@@ -20,8 +23,6 @@ What's included
 - [ack.vim](http://github.com/mileszs/ack.vim)
 
   Command: `,a` 
-
-- argtextobj
 
 - haskellmode-vim
 

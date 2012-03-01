@@ -28,9 +28,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "bundle/vim-pastie"]
-	path = bundle/vim-pastie
-	url = git://github.com/tpope/vim-pastie.git
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
@@ -67,9 +64,6 @@
 [submodule "bundle/vim-yankring"]
 	path = bundle/vim-yankring
 	url = git://github.com/chrismetcalf/vim-yankring.git
-[submodule "bundle/argtextobj.vim"]
-	path = bundle/argtextobj.vim
-	url = git://github.com/vim-scripts/argtextobj.vim.git
 [submodule "bundle/vim-indent-object"]
 	path = bundle/vim-indent-object
 	url = git://github.com/michaeljsmith/vim-indent-object.git
