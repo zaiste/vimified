@@ -73,6 +73,8 @@ Fuzzy file, buffer, mru and tag finder. ([source](https://github.com/kien/ctrlp.
 
 **Command:** `<ctrl-p>`
 
+![ctrlp view](http://cl.ly/1q1h243I350k2x2U2928)
+
 ### vim-coffee-script
 
 CoffeeScript support for vim ([source](https://github.com/kchmck/vim-coffee-script))

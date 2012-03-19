@@ -36,9 +36,9 @@ Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mirell/vim-matchit'
 Bundle 'matthias-guenther/hammer.vim'
 Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'wincent/Command-T'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'kien/ctrlp.vim'
 " }}}
 
 " Haskell {{{
@@ -77,7 +77,7 @@ let g:delimitMate_expand_space = 1
 let g:delimitMate_expand_cr = 1
 
 " nerdtree
-nmap <C-P> :NERDTreeToggle<CR>
+nmap <C-L> :NERDTreeToggle<CR>
 
 " nerdcommenter
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
@@ -122,9 +122,6 @@ let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "
 
 " Hammer
 nmap <leader>p :Hammer<cr>
-
-" Command-T 
-nmap <leader>, :CommandT<cr>
 
 " Powerline {{{
 let g:Powerline_symbols = 'fancy'
