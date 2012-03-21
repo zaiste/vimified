@@ -138,6 +138,19 @@ noremap <silent><Leader>/ :nohls<CR>
 " better ESC
 inoremap jk <Esc>
 
+" Splits ,v and ,h to open new splits (vertical and horizontal)
+nnoremap <leader>v <C-w>v<C->l
+nnoremap <leader>d <C-w>s<C-w>j
+" Move between splits
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
 nmap <silent> <leader>h :set invhlsearch<CR>
 nmap <silent> <leader>l :set invlist<CR>
 nmap <silent> <leader>n :set invnumber<CR>
