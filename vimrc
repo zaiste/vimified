@@ -147,6 +147,10 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
 nmap <silent> <leader>h :set invhlsearch<CR>
 nmap <silent> <leader>l :set invlist<CR>
 nmap <silent> <leader>n :set invnumber<CR>
