@@ -335,8 +335,8 @@ let g:delimitMate_expand_cr = 1
 nmap <C-u> :NERDTreeToggle<CR>
 
 " nerdcommenter
-nmap <leader>/ :call NERDComment(0, "invert")<cr>
-vmap <leader>/ :call NERDComment(0, "invert")<cr>
+nmap <leader># :call NERDComment(0, "invert")<cr>
+vmap <leader># :call NERDComment(0, "invert")<cr>
 
 " ,t to show tags window
 let Tlist_Show_Menu=1
