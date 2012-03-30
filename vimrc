@@ -1,5 +1,5 @@
 " vimrc
-" Author: Zaiste!
+" Author: Zaiste! <oh@zaiste.net>
 " Source: https://github.com/zaiste/vimified
 "
 " Have fun!
@@ -7,6 +7,7 @@
 set nocompatible
 filetype off
 
+" Vundle 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -41,6 +42,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 " }}}
 
+Bundle 'VimClojure'
+
 " Haskell {{{
 Bundle 'Twinside/vim-syntax-haskell-cabal'
 Bundle 'lukerandall/haskellmode-vim'
@@ -48,14 +51,232 @@ Bundle 'lukerandall/haskellmode-vim'
 
 " Colors {{{
 Bundle 'sjl/badwolf'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
 " }}}
 
+" General {{{
 filetype plugin indent on
-colorscheme badwolf
+colorscheme badwolf 
 syntax on
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 let mapleader = ","
 let maplocalleader = "\\"
+
+
+" Mappings {{{
+
+map Y y$
+
+" bracket match using tab
+map <tab> %
+
+" clear highlight after search
+noremap <silent><Leader>/ :nohls<CR>
+
+" better ESC
+inoremap jk <Esc>
+
+nmap <silent> <leader>h :set invhlsearch<CR>
+nmap <silent> <leader>l :set invlist<CR>
+nmap <silent> <leader>n :set invnumber<CR>
+nmap <silent> <leader>p :set invpaste<CR>
+
+nnoremap ; :
+" }}}
+
+" . abbrevs {{{
+"
+iabbrev z@ oh@zaiste.net 
+
+" . }}}
+
+" Settings {{{
+set autoread 
+set backspace=indent,eol,start
+set binary
+set cinoptions=:0,(s,u0,U1,g0,t0
+set completeopt=menuone,preview
+set hidden 
+set history=1000
+set incsearch 
+set laststatus=2 
+set list
+
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set showbreak=↪
+
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
+" _ backups {{{ 
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set backup 
+set noswapfile 
+" _ }}}
+
+set modelines=0 
+set noeol
+set number 
+set numberwidth=10
+set ruler 
+set shell=/bin/zsh 
+set showcmd 
+
+set matchtime=2
+
+" White characters {{{
+set autoindent
+set tabstop=4 
+set textwidth=80
+set shiftwidth=4 
+set softtabstop=4
+set expandtab
+set wrap 
+set formatoptions=qrn1
+set colorcolumn=+1
+" }}}
+
+set visualbell 
+
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc
+set wildmenu 
+
+set dictionary=/usr/share/dict/words
+" }}}
+
+" Triggers {{{
+
+" Save when losing focus
+au FocusLost * :silent! wall
+
+" }}}
+
+" Cursorline {{{
+" Only show cursorline in the current window and in normal mode.
+augroup cline
+    au!
+    au WinLeave * set nocursorline
+    au WinEnter * set cursorline
+    au InsertEnter * set nocursorline
+    au InsertLeave * set cursorline
+augroup END
+
+" Trailing whitespace {{{
+" Only shown when not in insert mode so I don't go insane.
+augroup trailing
+    au!
+    au InsertEnter * :set listchars-=trail:⌴
+    au InsertLeave * :set listchars+=trail:⌴
+augroup END
+
+" . searching {{{
+
+" sane regexes
+nnoremap / /\v
+vnoremap / /\v
+
+set ignorecase 
+set smartcase
+set showmatch 
+set gdefault
+set hlsearch
+
+" clear search matching
+noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+
+" Don't jump when using * for search 
+nnoremap * *<c-o>
+
+" Keep search matches in the middle of the window.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Same when jumping around
+nnoremap g; g;zz
+nnoremap g, g,zz
+
+" Open a Quickfix window for the last search.
+nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+
+" Begining & End of line in Normal mode 
+noremap H ^
+noremap L g_
+
+" Easy buffer navigation
+noremap <C-h>  <C-w>h
+noremap <C-j>  <C-w>j
+noremap <C-k>  <C-w>k
+noremap <C-l>  <C-w>l
+
+" vertical window split
+noremap <leader>v <C-w>v
+
+" horizontal window split 
+noremap <leader>s <C-w>s
+
+" Highlight word {{{
+
+nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
+
+" }}}
+
+" . }}}
+
+" . folding {{{
+
+set foldlevelstart=0
+
+" Space to toggle folds.
+nnoremap <Enter> za
+vnoremap <Enter> za
+
+" Make zO recursively open whatever top level fold we're in, no matter where the
+" cursor happens to be.
+nnoremap zO zCzO
+
+" Use ,z to "focus" the current fold.
+nnoremap <leader>z zMzvzz
+
+function! MyFoldText() " {{{
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
+    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+endfunction " }}}
+set foldtext=MyFoldText()
+
+" }}}
+"
+" Quick editing {{{
+
+nnoremap <leader>ev <C-w>s<C-w>j:e $MYVIMRC<cr>
+nnoremap <leader>es <C-w>s<C-w>j:e ~/.vim/snippets/<cr>
+nnoremap <leader>eg <C-w>s<C-w>j:e ~/.gitconfig<cr>
+nnoremap <leader>ez <C-w>s<C-w>j:e ~/.zshrc<cr>
+nnoremap <leader>et <C-w>s<C-w>j:e ~/.tmux.conf<cr>
+
+" }}}
+
+" --------------------
 
 set ofu=syntaxcomplete#Complete
 let g:rubycomplete_buffer_loading = 0
@@ -77,7 +298,7 @@ let g:delimitMate_expand_space = 1
 let g:delimitMate_expand_cr = 1
 
 " nerdtree
-nmap <C-L> :NERDTreeToggle<CR>
+nmap <C-u> :NERDTreeToggle<CR>
 
 " nerdcommenter
 nmap <leader>/ :call NERDComment(0, "invert")<cr>
@@ -127,63 +348,3 @@ nmap <leader>p :Hammer<cr>
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_cache_enabled = 1
 " }}}
-
-" Mappings {{{
-
-map Y y$
-
-" clear highlight after search
-noremap <silent><Leader>/ :nohls<CR>
-
-" better ESC
-inoremap jk <Esc>
-
-nmap <silent> <leader>h :set invhlsearch<CR>
-nmap <silent> <leader>l :set invlist<CR>
-nmap <silent> <leader>n :set invnumber<CR>
-nmap <silent> <leader>p :set invpaste<CR>
-
-nnoremap ; :
-
-" }}}
-
-" Settings {{{
-set autoindent
-set autoread 
-set backspace=indent,eol,start
-set binary
-set cinoptions=:0,(s,u0,U1,g0,t0
-set completeopt=menuone,preview
-set expandtab
-set foldcolumn=0 
-set foldlevel=9
-set foldmethod=indent
-set hidden 
-set history=1000
-set hlsearch
-set ignorecase 
-set incsearch 
-set laststatus=2 
-set list
-set listchars=trail:·
-set modelines=5 
-set nobackup 
-set noeol
-set nofoldenable
-set noswapfile 
-set nowrap 
-set number 
-set numberwidth=10
-set ruler 
-set shell=/bin/zsh 
-set shiftwidth=4 
-set showcmd 
-set showmatch 
-set smartcase
-set tabstop=4 
-set textwidth=0 
-set visualbell 
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif
-set wildmenu 
-" }}}
-
