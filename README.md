@@ -5,6 +5,8 @@ vimified
 
 Ultimate VIM configuration. Plugins are added via *awesome* [Vundle](https://github.com/gmarik/vundle).
 
+![ctrlp view](http://f.cl.ly/items/3a0X3F3x3r0K1n1u1Y2r/vimified.png)
+
 How to install
 --------------
 

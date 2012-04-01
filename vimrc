@@ -3,6 +3,7 @@
 " Source: https://github.com/zaiste/vimified
 "
 " Have fun!
+"
 
 set nocompatible
 filetype off
@@ -28,7 +29,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/vim-space'
 Bundle 'scrooloose/syntastic'
-Bundle 'msanders/snipmate.vim'
+"Bundle 'msanders/snipmate.vim'
 Bundle 'sjl/threesome.vim'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
@@ -65,6 +66,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 let mapleader = ","
 let maplocalleader = "\\"
+" }}}
 
 
 " Mappings {{{
@@ -84,8 +86,24 @@ nmap <silent> <leader>h :set invhlsearch<CR>
 nmap <silent> <leader>l :set invlist<CR>
 nmap <silent> <leader>n :set invnumber<CR>
 nmap <silent> <leader>p :set invpaste<CR>
+nmap <silent> <leader>i :set invrelativenumber<CR>
 
-nnoremap ; :
+nmap ; :<CR>
+
+" Emacs bindings in command line mode
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+
+" Source current line
+vnoremap <leader>L y:execute @@<cr>
+" Source visual selection 
+nnoremap <leader>L ^vg_y:execute @@<cr>
+
+" Select (charwise) the contents of the current line, excluding indentation.
+" Great for pasting Python lines into REPLs.
+" TODO: not working
+noremap V ^vg_
+
 " }}}
 
 " . abbrevs {{{
@@ -131,6 +149,8 @@ set showcmd
 
 set matchtime=2
 
+set completeopt=longest,menuone,preview
+
 " White characters {{{
 set autoindent
 set tabstop=4 
@@ -154,9 +174,16 @@ set dictionary=/usr/share/dict/words
 " Triggers {{{
 
 " Save when losing focus
-au FocusLost * :silent! wall
+au FocusLost    * :silent! wall
+
+au FocusLost    * :set number
+au FocusGained  * :set relativenumber
+
+au InsertEnter * :set number
+au InsertLeave * :set relativenumber
 
 " }}}
+
 
 " Cursorline {{{
 " Only show cursorline in the current window and in normal mode.
@@ -167,6 +194,7 @@ augroup cline
     au InsertEnter * set nocursorline
     au InsertLeave * set cursorline
 augroup END
+" }}}
 
 " Trailing whitespace {{{
 " Only shown when not in insert mode so I don't go insane.
@@ -235,10 +263,8 @@ nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<
 nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
 nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
 nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
-
 " }}}
-
-" . }}}
+" }}}
 
 " . folding {{{
 
@@ -343,8 +369,6 @@ nmap <leader>f :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R>
 " same in visual mode
 :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
 
-" Ack
-nmap <leader>a :Ack
 
 " vim-indentobject
 let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
@@ -352,7 +376,69 @@ let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "
 " Hammer
 nmap <leader>p :Hammer<cr>
 
-" Powerline {{{
+
+" }}}
+
+" _ Vim {{{
+augroup ft_vim
+    au!
+
+    au FileType vim setlocal foldmethod=marker
+    au FileType help setlocal textwidth=78
+    au BufWinEnter *.txt if &ft == 'help' | wincmd L | endif
+augroup END
+" }}}
+
+
+
+" PLUGINS {{{
+
+" _ Ack {{{
+nnoremap <leader>a :Ack!<space>
+" }}}
+
+" _ Powerline {{{
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_cache_enabled = 1
+" }}}
+
+" }}}
+
+" Extensions {{{
+
+" _ Scratch {{{
+
+command! ScratchToggle call ScratchToggle()
+
+function! ScratchToggle()
+    if exists("w:is_scratch_window")
+        unlet w:is_scratch_window
+        exec "q"
+    else
+        exec "normal! :Sscratch\<cr>\<C-W>J:resize 13\<cr>"
+        let w:is_scratch_window = 1
+    endif
+endfunction
+
+nnoremap <silent> <leader><tab> :ScratchToggle<cr>
+
+" }}}
+
+" _ Gist {{{
+" Send visual selection to gist.github.com as a private, filetyped Gist
+" Requires the gist command line too (brew install gist)
+vnoremap <leader>G :w !gist -p -t %:e \| pbcopy<cr>
+" }}}
+
+" }}}
+
+" TEXT OBJECTS {{{
+
+" Shortcut for [] motion {{{
+onoremap ir i[
+onoremap ar a[
+vnoremap ir i[
+vnoremap ar a[
+" }}}
+
 " }}}
