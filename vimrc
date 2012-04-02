@@ -99,11 +99,6 @@ vnoremap <leader>L y:execute @@<cr>
 " Source visual selection 
 nnoremap <leader>L ^vg_y:execute @@<cr>
 
-" Select (charwise) the contents of the current line, excluding indentation.
-" Great for pasting Python lines into REPLs.
-" TODO: not working
-noremap V ^vg_
-
 " }}}
 
 " . abbrevs {{{
