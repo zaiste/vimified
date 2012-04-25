@@ -19,6 +19,8 @@ How to install
     git clone https://github.com/gmarik/vundle.git bundle/vundle
     vim +BundleInstall +qall
     
+Installation requires [Z shell](http://zsh.org/) has already been installed in
+your system.
 
 What's included
 ---------------
