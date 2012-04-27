@@ -145,7 +145,7 @@ set noswapfile
 
 set modelines=0 
 set noeol
-set number 
+set relativenumber
 set numberwidth=10
 set ruler 
 set shell=/bin/zsh 
@@ -180,14 +180,6 @@ set dictionary=/usr/share/dict/words
 " Save when losing focus
 au FocusLost    * :silent! wall
 
-au FocusLost    * :set number
-au FocusGained  * :set relativenumber
-
-au InsertEnter * :set number
-au InsertLeave * :set relativenumber
-
-
-" }}}
 
 
 " Cursorline {{{
