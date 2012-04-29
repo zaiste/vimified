@@ -20,18 +20,20 @@ How to install
     vim +BundleInstall +qall
     
 
-What's included
----------------
+Plugins
+-------
 
-### ack.vim 
+### Tools Integration
+
+#### ack.vim 
 
 Vim plugin for the Perl module / CLI script 'ack'. ([source](http://github.com/mileszs/ack.vim))
 
 **Command**: `,a` 
 
-### hammer
+### [hammer](https://github.com/matthias-guenther/hammer.vim)
 
-vim, your markup language of choice, and your browser of choice. ([source](https://github.com/robgleeson/hammer.vim))
+vim, your markup language of choice, and your browser of choice. 
 
 **Command**: `,p` 
 
@@ -55,7 +57,7 @@ Molokai color scheme for Vim. ([source](https://github.com/tomasr/molokai))
 
 A tree explorer plugin for vim. ([source](https://github.com/scrooloose/nerdtree))
 
-**Command:** `CTRL-P`
+**Command:** `ctrl-u`
 
 ### nerdcommenter
 
@@ -73,15 +75,40 @@ Mirror of yankring.vim ([source](https://github.com/chrismetcalf/vim-yankring))
 
 Fuzzy file, buffer, mru and tag finder. ([source](https://github.com/kien/ctrlp.vim))
 
-**Command:** `<ctrl-p>`
+**Command:** `ctrl-p`
 
 ![ctrlp view](http://f.cl.ly/items/393i0b0N2C1H1e0Q2K3k/ctrlp.png)
 
-### vim-coffee-script
+#### [tagbar](https://github.com/majutsushi/tagbar)
 
-CoffeeScript support for vim ([source](https://github.com/kchmck/vim-coffee-script))
+Vim plugin that displays tags in a window, ordered by class etc. 
 
-- haskellmode-vim
+**Command:** `,t`
+
+### Language/Framework Support
+
+#### [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
+
+CoffeeScript support for vim. 
+
+#### [haskellmode-vim](https://github.com/lukerandall/haskellmode-vim)
+
+An unpacked copy of the haskellmode vimball. Ping me if it needs updating.
+
+#### vim-syntax-haskell-cabal
+
+#### [vim-rails](https://github.com/tpope/vim-rails)
+
+rails.vim: Ruby on Rails power tools 
+
+#### [vim-haml](https://github.com/tpope/vim-haml)
+
+Vim runtime files for Haml, Sass, and SCSS.
+
+### Visual
+
+- vim-colors-solarized
+
 
 - snipmate
 
@@ -91,28 +118,19 @@ CoffeeScript support for vim ([source](https://github.com/kchmck/vim-coffee-scri
 
 - vim-align
 
-- vim-colors-solarized
-
 - vim-endwise
 
 - vim-fugitive
-
-- vim-haml
 
 - vim-ident-object
 
 - vim-matchit
 
-- vim-pastie
+### Integration with external services
 
-- vim-pathogen
-
-- vim-preview
-
-- vim-rails
+#### [vim-pastie](https://github.com/tpope/vim-pastie)
 
 - vim-repeat
-
 
 - vim-space
 
@@ -120,7 +138,6 @@ CoffeeScript support for vim ([source](https://github.com/kchmck/vim-coffee-scri
 
 - vim-surround
 
-- vim-syntax-haskell-cabal
 
 - vim-textobj-rubyblock
 
