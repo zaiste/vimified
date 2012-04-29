@@ -29,10 +29,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/vim-space'
 Bundle 'scrooloose/syntastic'
+Bundle 'spiiph/vim-space'
 "Bundle 'msanders/snipmate.vim'
-Bundle 'sjl/threesome.vim'
+Bundle 'sjl/splice.vim'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'chrismetcalf/vim-yankring'
@@ -43,6 +43,8 @@ Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache-snippets-complete'
 " }}}
 
 Bundle 'VimClojure'
@@ -50,9 +52,14 @@ Bundle 'VimClojure'
 " Haskell {{{
 Bundle 'Twinside/vim-syntax-haskell-cabal'
 Bundle 'lukerandall/haskellmode-vim'
+
+au BufEnter *.hs compiler ghc
+
+let g:ghc = "/usr/local/bin/ghc"
+let g:haddock_browser = "open"
 " }}}
 
-" Colors {{{
+" Visual {{{
 Bundle 'sjl/badwolf'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
@@ -178,6 +185,7 @@ au FocusGained  * :set relativenumber
 
 au InsertEnter * :set number
 au InsertLeave * :set relativenumber
+
 
 " }}}
 
@@ -397,6 +405,10 @@ nnoremap <leader>a :Ack!<space>
 " _ Powerline {{{
 let g:Powerline_symbols = 'fancy'
 let g:Powerline_cache_enabled = 1
+" }}}
+
+" _ NeoCompl {{{
+let g:neocomplcache_enable_at_startup = 1
 " }}}
 
 " }}}

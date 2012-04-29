@@ -82,8 +82,6 @@ vim, your markup language of choice, and your browser of choice.
 
 fugitive.vim: a Git wrapper so awesome, it should be illegal 
 
-*disabled, conflict with splice.vim*
-
 #### [ctrlp](https://github.com/kien/ctrlp.vim)
 
 Fuzzy file, buffer, mru and tag finder.
