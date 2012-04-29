@@ -16,6 +16,8 @@ Bundle 'gmarik/vundle'
 
 " General {{{
 Bundle 'mileszs/ack.vim'
+Bundle 'zaiste/hammer.vim'
+Bundle 'majutsushi/tagbar'
 Bundle 'tsaleh/vim-align'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -36,7 +38,7 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'chrismetcalf/vim-yankring'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mirell/vim-matchit'
-Bundle 'matthias-guenther/hammer.vim'
+"Bundle 'matthias-guenther/hammer.vim'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
@@ -334,8 +336,7 @@ nmap <leader># :call NERDComment(0, "invert")<cr>
 vmap <leader># :call NERDComment(0, "invert")<cr>
 
 " ,t to show tags window
-let Tlist_Show_Menu=1
-nmap <leader>t :TlistToggle<CR>
+nmap <leader>t :TagbarToggle<CR>
 
 " sessionman
 nmap <leader>S :SessionList<CR>
