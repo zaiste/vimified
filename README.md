@@ -23,57 +23,70 @@ How to install
 Plugins
 -------
 
+### IDE
+
+#### [neocomplcache](https://github.com/Shougo/neocomplcache.git)
+
+Ultimate auto-completion system for Vim.
+
+#### [nerdtree](https://github.com/scrooloose/nerdtree)
+
+A tree explorer plugin for vim.
+
+**Command:** `ctrl-u`
+
+#### [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+
+Vim plugin for intensely orgasmic commenting.
+
+**Command:** `,/`
+
+#### [vim-yankring](https://github.com/chrismetcalf/vim-yankring)
+
+Mirror of yankring.vim 
+
+**Command:** `,y`
+
+#### [syntastic](https://github.com/scrooloose/syntastic)
+
+Syntax checking hacks for vim 
+
+#### [vim-repeat](https://github.com/tpope/vim-repeat)
+
+repeat.vim: enable repeating supported plugin maps with "."
+
+#### [vim-space](https://github.com/spiiph/vim-space)
+
+space.vim - Smart Space key for Vim
+
+#### [splice.vim](https://github.com/sjl/splice.vim)
+
+A Vim plugin for managing three-way merges.
+
+
 ### Tools Integration
 
-#### ack.vim 
+#### [ack.vim](http://github.com/mileszs/ack.vim)
 
-Vim plugin for the Perl module / CLI script 'ack'. ([source](http://github.com/mileszs/ack.vim))
+Vim plugin for the Perl module / CLI script 'ack'. 
 
 **Command**: `,a` 
 
-### [hammer](https://github.com/matthias-guenther/hammer.vim)
+#### [hammer](https://github.com/matthias-guenther/hammer.vim)
 
 vim, your markup language of choice, and your browser of choice. 
 
 **Command**: `,p` 
 
-### vim-ruby-refactoring
+#### [vim-fugitive](https://github.com/tpope/vim-fugitive)
 
-Refactoring tool for Ruby in vim! ([source](https://github.com/ecomba/vim-ruby-refactoring))
+fugitive.vim: a Git wrapper so awesome, it should be illegal 
 
-**Commands**:
+*disabled, conflict with splice.vim*
 
-  - [RAddParameter](http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-add-parameter-2/) : `,rap`
-  - [RInlineTemp](http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-inline-temp/) : `,rit`
-  - [RExtractMethod](http://justinram.wordpress.com/2010/12/31/vim-ruby-refactoring-extract-method/) : `,rem`
-  - [RRenameLocalVariable](http://justinram.wordpress.com/2010/12/31/vim-ruby-refactoring-rename-local-variable/) : `,rrlv`
-  - [RRenameInstanceVariable](http://justinram.wordpress.com/2010/12/31/vim-ruby-refactoring-rename-instance-variable/) : `,rriv`
+#### [ctrlp](https://github.com/kien/ctrlp.vim)
 
-### molokai
-
-Molokai color scheme for Vim. ([source](https://github.com/tomasr/molokai))
-
-### nerdtree
-
-A tree explorer plugin for vim. ([source](https://github.com/scrooloose/nerdtree))
-
-**Command:** `ctrl-u`
-
-### nerdcommenter
-
-Vim plugin for intensely orgasmic commenting. ([source](https://github.com/scrooloose/nerdcommenter))
-
-**Command:** `,/`
-
-### vim-yankring
-
-Mirror of yankring.vim ([source](https://github.com/chrismetcalf/vim-yankring))
-
-**Command:** `,y`
-
-### ctrlp
-
-Fuzzy file, buffer, mru and tag finder. ([source](https://github.com/kien/ctrlp.vim))
+Fuzzy file, buffer, mru and tag finder.
 
 **Command:** `ctrl-p`
 
@@ -95,7 +108,22 @@ CoffeeScript support for vim.
 
 An unpacked copy of the haskellmode vimball. Ping me if it needs updating.
 
-#### vim-syntax-haskell-cabal
+####
+[vim-syntax-haskell-cabal](https://github.com/Twinside/vim-syntax-haskell-cabal)
+
+Syntax file for Haskell's cabal syntax file
+
+#### [vim-ruby-refactoring](https://github.com/ecomba/vim-ruby-refactoring)
+
+Refactoring tool for Ruby in vim!
+
+**Commands**:
+
+  - [RAddParameter](http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-add-parameter-2/) : `,rap`
+  - [RInlineTemp](http://justinram.wordpress.com/2010/12/30/vim-ruby-refactoring-inline-temp/) : `,rit`
+  - [RExtractMethod](http://justinram.wordpress.com/2010/12/31/vim-ruby-refactoring-extract-method/) : `,rem`
+  - [RRenameLocalVariable](http://justinram.wordpress.com/2010/12/31/vim-ruby-refactoring-rename-local-variable/) : `,rrlv`
+  - [RRenameInstanceVariable](http://justinram.wordpress.com/2010/12/31/vim-ruby-refactoring-rename-instance-variable/) : `,rriv`
 
 #### [vim-rails](https://github.com/tpope/vim-rails)
 
@@ -105,49 +133,79 @@ rails.vim: Ruby on Rails power tools
 
 Vim runtime files for Haml, Sass, and SCSS.
 
+#### [vim-textobj-rubyblock](https://github.com/nelstrom/vim-textobj-rubyblock)
+
+A custom text object for selecting ruby blocks.
+
+#### [vim-endwise](https://github.com/tpope/vim-endwise)
+
+endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc 
+
 ### Visual
 
-- vim-colors-solarized
+#### [molokai](https://github.com/tomasr/molokai)
+
+Molokai color scheme for Vim. 
+
+####
+[vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+
+precision colorscheme for the vim text editor
+
+#### [badwolf](https://github.com/sjl/badwolf)
+
+A Vim color scheme.
 
 
-- snipmate
+### Textual Potions
 
-- syntastic
+#### [vim-matchit](https://github.com/mirell/vim-matchit)
 
-- threesome
+The matchit.vim script allows you to configure % to match more than just single characters.
 
-- vim-align
+#### [vim-align](https://github.com/tsaleh/vim-align)
 
-- vim-endwise
+Clone of the Align.vba file, since I think VBA files are a freaking abomination. 
 
-- vim-fugitive
+#### [vim-surround](https://github.com/tpope/vim-surround)
 
-- vim-ident-object
+surround.vim: quoting/parenthesizing made simple 
 
-- vim-matchit
+#### [vim-unimpaired](https://github.com/tpope/vim-unimpaired)
+
+unimpaired.vim: pairs of handy bracket mappings 
+
+#### [vim-textobj-user](https://github.com/kana/vim-textobj-user)
+
+Vim plugin: Support for user-defined text objects 
+
+#### [vim-ident-object](https://github.com/michaeljsmith/vim-indent-object)
+
+Vim plugin that defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts, etc. 
+
+#### [vim-speeddating](https://github.com/tpope/vim-speeddating)
+
+speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more 
 
 ### Integration with external services
 
 #### [vim-pastie](https://github.com/tpope/vim-pastie)
 
-- vim-repeat
-
-- vim-space
-
-- vim-speeddating
-
-- vim-surround
+pastie.vim: interface for pastie.org 
 
 
-- vim-textobj-rubyblock
+## Call for Help
 
-- vim-textobj-user
+If you have ideas on how to make this Vim configration framework better, don’t hesitate to fork and send pull requests. Thanks!
 
-- vim-unimpaired
+### Contributors
 
+ * [sharnik](https://github.com/sharnik)
 
-Cooked by [Zaiste!](http://zaiste.net/) 
+### Inspired by 
 
-Inspired by 
  * [dotvim](https://github.com/astrails/dotvim)
  * [Steve Losh's dotfiles](https://github.com/sjl/dotfiles)
+ * [skwp's dotfiles](https://github.com/skwp/dotfiles)
+
+### Cooked by [Zaiste!](http://zaiste.net)
