@@ -145,7 +145,7 @@ set noswapfile
 
 set modelines=0 
 set noeol
-set number 
+set relativenumber
 set numberwidth=10
 set ruler 
 set shell=/bin/zsh 
@@ -180,14 +180,6 @@ set dictionary=/usr/share/dict/words
 " Save when losing focus
 au FocusLost    * :silent! wall
 
-au FocusLost    * :set number
-au FocusGained  * :set relativenumber
-
-au InsertEnter * :set number
-au InsertLeave * :set relativenumber
-
-
-" }}}
 
 
 " Cursorline {{{
@@ -249,18 +241,12 @@ noremap <C-k>  <C-w>k
 noremap <C-l>  <C-w>l
 
 " Splits ,v and ,h to open new splits (vertical and horizontal)
-nnoremap <leader>v <C-w>v<C->l
-nnoremap <leader>d <C-w>s<C-w>j
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>s <C-w>s<C-w>j
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
-
-" vertical window split
-noremap <leader>v <C-w>v
-
-" horizontal window split 
-noremap <leader>s <C-w>s
 
 " Highlight word {{{
 
