@@ -39,6 +39,7 @@ Bundle 'chrismetcalf/vim-yankring'
 Bundle 'michaeljsmith/vim-indent-object'
 Bundle 'mirell/vim-matchit'
 "Bundle 'matthias-guenther/hammer.vim'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
@@ -69,6 +70,7 @@ Bundle 'tomasr/molokai'
 filetype plugin indent on
 colorscheme badwolf 
 syntax on
+autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
@@ -436,4 +438,11 @@ vnoremap ir i[
 vnoremap ar a[
 " }}}
 
+" }}}
+
+" Extra vimrc {{{
+let s:extrarc = expand($HOME . '/.vim/local.vimrc')
+if filereadable(s:extrarc)
+    exec ':so ' . s:extrarc
+endif
 " }}}
