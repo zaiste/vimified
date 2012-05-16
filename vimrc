@@ -441,7 +441,7 @@ vnoremap ar a[
 " }}}
 
 " Extra vimrc {{{
-let s:extrarc = expand($HOME . '/.extra.vimrc')
+let s:extrarc = expand($HOME . '/.vim/local.vimrc')
 if filereadable(s:extrarc)
     exec ':so ' . s:extrarc
 endif
