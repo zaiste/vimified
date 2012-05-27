@@ -8,87 +8,175 @@
 set nocompatible
 filetype off
 
-" Vundle 
+let mapleader = ","
+let maplocalleader = "\\"
+
+" Local vimrc configuration {{{
+let s:localrc = expand($HOME . '/.vim/local.vimrc')
+if filereadable(s:localrc)
+    exec ':so ' . s:localrc
+endif
+" }}}
+
+" PACKAGE LIST {{{
+" Use this variable inside your local configuration to declare 
+" which package you would like to include
+if ! exists('g:vimified_packages')
+    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
+endif
+" }}}
+
+" VUNDLE {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-
-" General {{{
-Bundle 'mileszs/ack.vim'
-Bundle 'zaiste/hammer.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'tsaleh/vim-align'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'spiiph/vim-space'
-"Bundle 'msanders/snipmate.vim'
-Bundle 'sjl/splice.vim'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'kana/vim-textobj-user'
-Bundle 'chrismetcalf/vim-yankring'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'mirell/vim-matchit'
-"Bundle 'matthias-guenther/hammer.vim'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'ecomba/vim-ruby-refactoring'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'kien/ctrlp.vim'
-"Bundle 'Shougo/neocomplcache'
-"Bundle 'Shougo/neocomplcache-snippets-complete'
-
-Bundle 'zaiste/tmux.vim'
-Bundle 'benmills/vimux'
-Bundle 'gregsexton/gitv'
-Bundle 'zaiste/Atom'
-
 " }}}
 
-" Clojure {{{ 
-Bundle 'zaiste/VimClojure'
+" PACKAGES {{{
 
-let vimclojure#HighlightBuiltins=1
-let vimclojure#ParenRainbow=1
+" _. General {{{
+if count(g:vimified_packages, 'general')
+    Bundle "mileszs/ack.vim"
+    nnoremap <leader>a :Ack!<space>
 
+    Bundle 'matthias-guenther/hammer.vim' 
+    nmap <leader>p :Hammer<cr>
+
+    Bundle 'tsaleh/vim-align'
+    Bundle 'tpope/vim-endwise'
+    Bundle 'tpope/vim-repeat'
+    Bundle 'tpope/vim-speeddating'
+    Bundle 'tpope/vim-surround'
+    Bundle 'tpope/vim-unimpaired'
+    Bundle 'scrooloose/nerdtree' 
+    nmap <C-u> :NERDTreeToggle<CR>
+
+    Bundle 'spiiph/vim-space'
+    Bundle 'kana/vim-textobj-user'
+    Bundle 'chrismetcalf/vim-yankring'
+    let g:yankring_replace_n_pkey = '<leader>['
+    let g:yankring_replace_n_nkey = '<leader>]'
+    let g:yankring_history_dir = '~/.vim/tmp'
+    nmap <leader>y :YRShow<cr>
+
+    Bundle 'michaeljsmith/vim-indent-object'
+    let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
+
+    Bundle 'mirell/vim-matchit'
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'vim-scripts/scratch.vim'
+endif
 " }}}
 
-" Haskell {{{
-Bundle 'Twinside/vim-syntax-haskell-cabal'
-Bundle 'lukerandall/haskellmode-vim'
-
-au BufEnter *.hs compiler ghc
-
-let g:ghc = "/usr/local/bin/ghc"
-let g:haddock_browser = "open"
+" _. Fancy {{{
+if count(g:vimified_packages, 'fancy')
+    Bundle 'Lokaltog/vim-powerline'
+    let g:Powerline_symbols = 'fancy'
+    let g:Powerline_cache_enabled = 1
+endif
 " }}}
 
-" Visual {{{
-Bundle 'sjl/badwolf'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
+" _. OS {{{
+if count(g:vimified_packages, 'os')
+    Bundle 'zaiste/tmux.vim'
+    Bundle 'benmills/vimux' 
+    map <Leader>rp :PromptVimTmuxCommand<CR>
+    map <Leader>rl :RunLastVimTmuxCommand<CR>
+endif
+" }}}
+
+" _. Coding {{{
+if count(g:vimified_packages, 'coding')
+    Bundle 'majutsushi/tagbar' 
+    nmap <leader>t :TagbarToggle<CR>
+
+    Bundle 'gregsexton/gitv'
+
+    Bundle 'scrooloose/nerdcommenter' 
+    nmap <leader># :call NERDComment(0, "invert")<cr>
+    vmap <leader># :call NERDComment(0, "invert")<cr>
+
+    " - Bundle 'msanders/snipmate.vim'
+    Bundle 'sjl/splice.vim'
+
+    Bundle 'tpope/vim-fugitive' 
+    nmap <leader>g :Ggrep
+    " ,f for global git serach for word under the cursor (with highlight)
+    nmap <leader>f :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR>
+    " same in visual mode
+    :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
+
+    Bundle 'scrooloose/syntastic'
+    let g:syntastic_enable_signs=1
+    let g:syntastic_auto_loc_list=1
+endif
+" }}}
+
+" _. Ruby {{{
+if count(g:vimified_packages, 'ruby')
+    Bundle 'vim-ruby/vim-ruby'
+    Bundle 'tpope/vim-rails'
+    Bundle 'nelstrom/vim-textobj-rubyblock'
+    Bundle 'ecomba/vim-ruby-refactoring'
+
+    autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+endif
+" }}}
+
+" _. HTML {{{
+if count(g:vimified_packages, 'html')
+    Bundle 'tpope/vim-haml'
+endif
+" }}}
+
+" _. CSS {{{
+" }}}
+
+" _. JS {{{
+if count(g:vimified_packages, 'js')
+    Bundle 'kchmck/vim-coffee-script'
+endif
+" }}}
+
+" _. Clojure {{{ 
+if count(g:vimified_packages, 'clojure')
+    Bundle 'zaiste/VimClojure'
+
+    let vimclojure#HighlightBuiltins=1
+    let vimclojure#ParenRainbow=0
+endif
+" }}}
+
+" _. Haskell {{{
+if count(g:vimified_packages, 'haskell')
+    Bundle 'Twinside/vim-syntax-haskell-cabal'
+    Bundle 'lukerandall/haskellmode-vim'
+
+    au BufEnter *.hs compiler ghc
+
+    let g:ghc = "/usr/local/bin/ghc"
+    let g:haddock_browser = "open"
+endif
+" }}}
+
+" _. Color {{{
+if count(g:vimified_packages, 'color')
+    Bundle 'sjl/badwolf'
+    Bundle 'altercation/vim-colors-solarized'
+    Bundle 'tomasr/molokai'
+    Bundle 'zaiste/Atom'
+endif
 " }}}
 
 " General {{{
 filetype plugin indent on
 colorscheme badwolf 
 syntax on
-autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-let mapleader = ","
-let maplocalleader = "\\"
 " }}}
 
 
@@ -269,6 +357,7 @@ nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<
 nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
 nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
 " }}}
+
 " }}}
 
 " . folding {{{
@@ -328,58 +417,23 @@ hi! link ShowMarksHLu LineNr
 hi! link ShowMarksHLo LineNr
 hi! link ShowMarksHLm LineNr
 
-" syntastic
-let g:syntastic_enable_signs=1
-let g:syntastic_auto_loc_list=1
-
-" delimitMate
+" delimitMate REMOVE?
 let g:delimitMate_expand_space = 1
 let g:delimitMate_expand_cr = 1
 
-" nerdtree
-nmap <C-u> :NERDTreeToggle<CR>
-
-" nerdcommenter
-nmap <leader># :call NERDComment(0, "invert")<cr>
-vmap <leader># :call NERDComment(0, "invert")<cr>
-
-" ,t to show tags window
-nmap <leader>t :TagbarToggle<CR>
-
-" sessionman
+" sessionman REMOVE?
 nmap <leader>S :SessionList<CR>
 nmap <leader>SS :SessionSave<CR>
 nmap <leader>SA :SessionSaveAs<CR>
 
-" minibufexpl
+" minibufexpl REMOVE?
 let g:miniBufExplVSplit = 25
 let g:miniBufExplorerMoreThanOne = 100
 let g:miniBufExplUseSingleClick = 1
 nmap <Leader>b :MiniBufExplorer<cr>
 
-" yankring
-let g:yankring_replace_n_pkey = '<leader>['
-let g:yankring_replace_n_nkey = '<leader>]'
-let g:yankring_history_dir = '~/.vim/tmp'
-nmap <leader>y :YRShow<cr>
-
 
 " Fugitive
-" ,e for Ggrep
-nmap <leader>g :Ggrep
-
-" ,f for global git serach for word under the cursor (with highlight)
-nmap <leader>f :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR>
-
-" same in visual mode
-:vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
-
-
-" vim-indentobject
-let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
-
-" Hammer
-nmap <leader>p :Hammer<cr>
 
 
 " }}}
@@ -394,36 +448,9 @@ augroup ft_vim
 augroup END
 " }}}
 
+" EXTENSIONS {{{
 
-
-" PLUGINS {{{
-
-" _ Ack {{{
-nnoremap <leader>a :Ack!<space>
-" }}}
-
-" _ Powerline {{{
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_cache_enabled = 1
-" }}}
-
-" _ NeoCompl {{{
-let g:neocomplcache_enable_at_startup = 1
-" }}}
-
-" _ Vimux {{{
-" Prompt for a command to run
-map <Leader>rp :PromptVimTmuxCommand<CR>
-
-" Run last command executed by RunVimTmuxCommand
-map <Leader>rl :RunLastVimTmuxCommand<CR>
-" }}}
-
-" }}}
-
-" Extensions {{{
-
-" _ Scratch {{{
+" _. Scratch {{{
 
 command! ScratchToggle call ScratchToggle()
 
@@ -441,7 +468,7 @@ nnoremap <silent> <leader><tab> :ScratchToggle<cr>
 
 " }}}
 
-" _ Gist {{{
+" _. Gist {{{
 " Send visual selection to gist.github.com as a private, filetyped Gist
 " Requires the gist command line too (brew install gist)
 vnoremap <leader>G :w !gist -p -t %:e \| pbcopy<cr>
@@ -451,18 +478,10 @@ vnoremap <leader>G :w !gist -p -t %:e \| pbcopy<cr>
 
 " TEXT OBJECTS {{{
 
-" Shortcut for [] motion {{{
+" Shortcut for [] motion
 onoremap ir i[
 onoremap ar a[
 vnoremap ir i[
 vnoremap ar a[
-" }}}
 
-" }}}
-
-" Extra vimrc {{{
-let s:extrarc = expand($HOME . '/.vim/local.vimrc')
-if filereadable(s:extrarc)
-    exec ':so ' . s:extrarc
-endif
 " }}}
