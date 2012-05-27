@@ -53,7 +53,13 @@ Bundle 'zaiste/Atom'
 
 " }}}
 
-Bundle 'VimClojure'
+" Clojure {{{ 
+Bundle 'zaiste/VimClojure'
+
+let vimclojure#HighlightBuiltins=1
+let vimclojure#ParenRainbow=1
+
+" }}}
 
 " Haskell {{{
 Bundle 'Twinside/vim-syntax-haskell-cabal'
