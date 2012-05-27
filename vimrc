@@ -43,8 +43,14 @@ Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
+"Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache-snippets-complete'
+
+Bundle 'zaiste/tmux.vim'
+Bundle 'benmills/vimux'
+Bundle 'gregsexton/gitv'
+Bundle 'zaiste/Atom'
+
 " }}}
 
 Bundle 'VimClojure'
