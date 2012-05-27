@@ -423,6 +423,14 @@ let g:Powerline_cache_enabled = 1
 let g:neocomplcache_enable_at_startup = 1
 " }}}
 
+" _ Vimux {{{
+" Prompt for a command to run
+map <Leader>rp :PromptVimTmuxCommand<CR>
+
+" Run last command executed by RunVimTmuxCommand
+map <Leader>rl :RunLastVimTmuxCommand<CR>
+" }}}
+
 " }}}
 
 " Extensions {{{
