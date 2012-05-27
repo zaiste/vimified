@@ -18,7 +18,30 @@ How to install
     mkdir bundle
     git clone https://github.com/gmarik/vundle.git bundle/vundle
     vim +BundleInstall +qall
+
     
+Packages
+--------
+
+Inside your local configuration file `$HOME/.vim/local.vimrc` set `g:vimified_packages` variable with packages you want to use. 
+
+For example, if you are only interested in Ruby/Rails related stuff, put something like the following line inside `$HOME/.vim/local.vimrc`:
+
+    let g:vimified_packages = ['general', 'coding', 'ruby', 'color']
+
+Avaible packages:
+
+ * general
+ * fancy
+ * os
+ * coding 
+ * ruby
+ * html
+ * css
+ * js 
+ * clojure
+ * haskel
+ * color
 
 Plugins
 -------
@@ -28,6 +51,8 @@ Plugins
 #### [neocomplcache](https://github.com/Shougo/neocomplcache.git)
 
 Ultimate auto-completion system for Vim.
+
+*Disactivated*
 
 #### [nerdtree](https://github.com/scrooloose/nerdtree)
 
