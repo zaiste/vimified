@@ -2,4 +2,4 @@ bundle/
 *.swp
 tmp/
 .DS_Store
-local.vimrc
+*.vimrc
