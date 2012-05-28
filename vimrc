@@ -219,6 +219,10 @@ vnoremap <leader>L y:execute @@<cr>
 " Source visual selection 
 nnoremap <leader>L ^vg_y:execute @@<cr>
 
+" w!! to write a file as sudo
+" stolen from Steve Losh
+cmap w!! w !sudo tee % >/dev/null
+
 " }}}
 
 " . abbrevs {{{
