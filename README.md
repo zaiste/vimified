@@ -33,6 +33,15 @@ Install plugins:
     vim +BundleInstall +qall
 
 Enjoy!
+
+Configuration
+-------------
+
+You can overwrite default configuration and key bindings by using one of following files:
+
+`~/.vim/before.vimrc` will be loaded before everything else. 
+
+`~/.vim/after.vimrc` will be loaded after all configuration options are set. This is best place to change vimified default behaviour (keybindings) and/or color scheme.
     
 Packages
 --------

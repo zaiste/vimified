@@ -57,6 +57,9 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-unimpaired'
     Bundle 'scrooloose/nerdtree' 
     nmap <C-u> :NERDTreeToggle<CR>
+    " Disable the scrollbars (NERDTree)
+    set guioptions-=r
+    set guioptions-=L
 
     Bundle 'spiiph/vim-space'
     Bundle 'kana/vim-textobj-user'
@@ -235,6 +238,9 @@ set history=1000
 set incsearch 
 set laststatus=2 
 set list
+set encoding=utf-8
+" Disable the macvim toolbar
+set guioptions-=T
 
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set showbreak=↪
