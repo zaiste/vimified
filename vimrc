@@ -8,6 +8,12 @@
 set nocompatible
 filetype off
 
+" Load external configuration before anything else {{{
+if filereadable(expand("~/.vim/before.vimrc"))
+  source ~/.vim/before.vimrc
+endif
+" }}}
+
 let mapleader = ","
 let maplocalleader = "\\"
 
@@ -484,4 +490,10 @@ onoremap ar a[
 vnoremap ir i[
 vnoremap ar a[
 
+" }}}
+
+" Load addidional configuration (ie to overwrite shorcuts) {{{
+if filereadable(expand("~/.vim/after.vimrc"))
+  source ~/.vim/after.vimrc
+endif
 " }}}
