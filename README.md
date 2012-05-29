@@ -18,9 +18,13 @@ Grab the project:
     ln -sfn vimified/vimrc ~/.vimrc
     cd vimified
 
-Set up Vundle
+Create required directories
 
     mkdir bundle
+    mkdir -p tmp/backup tmp/swap tmp/undo
+
+Set up Vundle
+
     git clone https://github.com/gmarik/vundle.git bundle/vundle
 
 Set up your local configuration via `local.vimrc` file and choose package you
