@@ -136,6 +136,7 @@ endif
 " _. HTML {{{
 if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-haml'
+    Bundle 'juvenn/mustache.vim'
 endif
 " }}}
 

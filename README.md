@@ -216,6 +216,10 @@ Refactoring tool for Ruby in vim!
 
 Vim runtime files for Haml, Sass, and SCSS.
 
+#### [mustache.vim](https://github.com/juvenn/mustache.vim)
+
+Vim syntax file for mustache and handlebars(?)
+
 ### CSS
 
 ### JS
