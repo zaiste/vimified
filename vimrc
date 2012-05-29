@@ -366,6 +366,12 @@ nnoremap <leader>s <C-w>s<C-w>j
 vnoremap < <gv
 vnoremap > >gv
 
+" Bubbling lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
+
 " Highlight word {{{
 
 nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
