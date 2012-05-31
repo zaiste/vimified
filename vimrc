@@ -40,9 +40,6 @@ if count(g:vimified_packages, 'general')
     Bundle "mileszs/ack.vim"
     nnoremap <leader>a :Ack!<space>
 
-    Bundle 'matthias-guenther/hammer.vim' 
-    nmap <leader>p :Hammer<cr>
-
     Bundle 'tsaleh/vim-align'
     Bundle 'tpope/vim-endwise'
     Bundle 'tpope/vim-repeat'

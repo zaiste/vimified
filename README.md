@@ -97,12 +97,6 @@ Vim plugin for the Perl module / CLI script 'ack'.
 
 **Command**: `,a` 
 
-#### [hammer](https://github.com/matthias-guenther/hammer.vim)
-
-vim, your markup language of choice, and your browser of choice. 
-
-**Command**: `,p` 
-
 #### [vim-fugitive](https://github.com/tpope/vim-fugitive)
 
 fugitive.vim: a Git wrapper so awesome, it should be illegal 
