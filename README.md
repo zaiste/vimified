@@ -226,7 +226,15 @@ Vim syntax file for mustache and handlebars(?)
 
 #### [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
 
-CoffeeScript support for vim. 
+#### [jacinto.vim](https://github.com/alfredodeza/jacinto.vim)
+
+Format and validate JSON files.
+
+    :Jacinto validate
+
+or
+
+    :Jacinto syntax
 
 ### Clojure
 

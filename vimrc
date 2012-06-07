@@ -146,6 +146,7 @@ endif
 " _. JS {{{
 if count(g:vimified_packages, 'js')
     Bundle 'kchmck/vim-coffee-script'
+    Bundle 'alfredodeza/jacinto.vim'
 endif
 " }}}
 
