@@ -119,6 +119,10 @@ if count(g:vimified_packages, 'coding')
     Bundle 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=1
+
+    " --
+
+    autocmd FileType gitcommit set tw=68 spell
 endif
 " }}}
 
@@ -129,7 +133,7 @@ if count(g:vimified_packages, 'ruby')
     Bundle 'nelstrom/vim-textobj-rubyblock'
     Bundle 'ecomba/vim-ruby-refactoring'
 
-    autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+    autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et
 endif
 " }}}
 
@@ -137,6 +141,10 @@ endif
 if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-haml'
     Bundle 'juvenn/mustache.vim'
+
+    " --
+    au BufRead,BufNewFile *.md          set ft=mkd tw=80 ts=2 sw=2 expandtab
+    au BufRead,BufNewFile *.markdown    set ft=mkd tw=80 ts=2 sw=2 expandtab
 endif
 " }}}
 
