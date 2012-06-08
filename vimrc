@@ -75,6 +75,8 @@ if count(g:vimified_packages, 'general')
     Bundle 'mirell/vim-matchit'
     Bundle 'kien/ctrlp.vim'
     Bundle 'vim-scripts/scratch.vim'
+
+    Bundle 'vim-scripts/bufexplorer.zip'
 endif
 " }}}
 

@@ -144,6 +144,10 @@ Fuzzy file, buffer, mru and tag finder.
 
 ![ctrlp view](http://f.cl.ly/items/393i0b0N2C1H1e0Q2K3k/ctrlp.png)
 
+#### [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
+
+Buffer Explorer / Browser.
+
 ### Fancy
 
 #### [powerline](https://github.com/Lokaltog/vim-powerline)
