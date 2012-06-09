@@ -61,9 +61,8 @@ if count(g:vimified_packages, 'general')
     set guioptions-=r
     set guioptions-=L
 
-    Bundle 'spiiph/vim-space'
     Bundle 'kana/vim-textobj-user'
-    Bundle 'chrismetcalf/vim-yankring'
+    Bundle 'vim-scripts/YankRing.vim'
     let g:yankring_replace_n_pkey = '<leader>['
     let g:yankring_replace_n_nkey = '<leader>]'
     let g:yankring_history_dir = '~/.vim/tmp'
@@ -94,6 +93,9 @@ if count(g:vimified_packages, 'os')
     Bundle 'benmills/vimux' 
     map <Leader>rp :PromptVimTmuxCommand<CR>
     map <Leader>rl :RunLastVimTmuxCommand<CR>
+
+    vmap <LocalLeader>rs "vy :call RunVimTmuxCommand(@v . "\n", 0)<CR>
+    nmap <LocalLeader>rs vip<LocalLeader>rs<CR>
 endif
 " }}}
 
