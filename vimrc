@@ -145,10 +145,8 @@ endif
 if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-haml'
     Bundle 'juvenn/mustache.vim'
-
-    " --
-    au BufRead,BufNewFile *.md          set ft=mkd tw=80 ts=2 sw=2 expandtab
-    au BufRead,BufNewFile *.markdown    set ft=mkd tw=80 ts=2 sw=2 expandtab
+    Bundle 'tpope/vim-markdown'
+    Bundle 'Ampersandy/sparkup'
 endif
 " }}}
 
