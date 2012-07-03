@@ -36,6 +36,12 @@ endif
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" Local vimrc configuration {{{
+let s:extrarc = expand($HOME . '/.vim/extra.vimrc')
+if filereadable(s:extrarc)
+    exec ':so ' . s:extrarc
+endif
+
 Bundle 'gmarik/vundle'
 " }}}
 
