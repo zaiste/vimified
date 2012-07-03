@@ -203,8 +203,6 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Mappings {{{
 
-map Y y$
-
 " bracket match using tab
 map <tab> %
 
