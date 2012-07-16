@@ -205,6 +205,14 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Mappings {{{
 
+" You want to be part of the gurus? Time to get in serious stuff and stop using
+" arrow keys.
+noremap <left> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <right> <nop>
+
+" Yank from current cursor position to end of line
 map Y y$
 " Yank content in OS's clipboard
 vmap <leader>y "*y
