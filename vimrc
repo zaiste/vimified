@@ -220,7 +220,7 @@ nmap <silent> <leader>n :set invnumber<CR>
 nmap <silent> <leader>p :set invpaste<CR>
 nmap <silent> <leader>i :set invrelativenumber<CR>
 
-nmap ; :<CR>
+nmap ; :
 
 " Emacs bindings in command line mode
 cnoremap <c-a> <home>
@@ -311,7 +311,6 @@ set dictionary=/usr/share/dict/words
 au FocusLost    * :silent! wall
 
 " }}}
-
 
 " Cursorline {{{
 " Only show cursorline in the current window and in normal mode.
