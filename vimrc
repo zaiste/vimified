@@ -206,6 +206,10 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " Mappings {{{
 
 map Y y$
+" Yank content in OS's clipboard
+vmap <leader>y "*y
+" Paste content from OS's clipboard
+nmap <leader>p "*p
 
 " bracket match using tab
 map <tab> %
