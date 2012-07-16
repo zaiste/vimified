@@ -303,10 +303,9 @@ set completeopt=longest,menuone,preview
 set autoindent
 set tabstop=4
 set textwidth=80
-set shiftwidth=4 
-set softtabstop=4
-set expandtab
-set wrap 
+set shiftwidth=4
+set noexpandtab
+set wrap
 set formatoptions=qrn1
 set colorcolumn=+1
 " }}}
