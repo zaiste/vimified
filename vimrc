@@ -189,6 +189,7 @@ if count(g:vimified_packages, 'color')
     Bundle 'zaiste/Atom'
 endif
 " }}}
+" }}}
 
 " General {{{
 filetype plugin indent on
@@ -199,7 +200,6 @@ syntax on
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " }}}
-
 
 " Mappings {{{
 
@@ -310,6 +310,7 @@ set dictionary=/usr/share/dict/words
 " Save when losing focus
 au FocusLost    * :silent! wall
 
+" }}}
 
 
 " Cursorline {{{
@@ -330,6 +331,8 @@ augroup trailing
     au InsertEnter * :set listchars-=trail:⌴
     au InsertLeave * :set listchars+=trail:⌴
 augroup END
+
+" }}}
 
 " . searching {{{
 
@@ -360,6 +363,16 @@ nnoremap g, g,zz
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
+" Highlight word {{{
+
+nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
+" }}}
+
+" }}}
+
 " Begining & End of line in Normal mode 
 noremap H ^
 noremap L g_
@@ -389,14 +402,6 @@ nmap <C-Up> [e
 nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
-
-" Highlight word {{{
-
-nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
-" }}}
 
 " }}}
 
@@ -433,7 +438,7 @@ endfunction " }}}
 set foldtext=MyFoldText()
 
 " }}}
-"
+
 " Quick editing {{{
 
 nnoremap <leader>ev <C-w>s<C-w>j:e $MYVIMRC<cr>
@@ -441,8 +446,6 @@ nnoremap <leader>es <C-w>s<C-w>j:e ~/.vim/snippets/<cr>
 nnoremap <leader>eg <C-w>s<C-w>j:e ~/.gitconfig<cr>
 nnoremap <leader>ez <C-w>s<C-w>j:e ~/.zshrc<cr>
 nnoremap <leader>et <C-w>s<C-w>j:e ~/.tmux.conf<cr>
-
-" }}}
 
 " --------------------
 
