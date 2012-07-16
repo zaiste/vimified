@@ -397,7 +397,7 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-" Easy buffer navigation
+" Easy splitted window navigation
 noremap <C-h>  <C-w>h
 noremap <C-j>  <C-w>j
 noremap <C-k>  <C-w>k
