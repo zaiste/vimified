@@ -474,21 +474,6 @@ hi! link ShowMarksHLu LineNr
 hi! link ShowMarksHLo LineNr
 hi! link ShowMarksHLm LineNr
 
-" delimitMate REMOVE?
-let g:delimitMate_expand_space = 1
-let g:delimitMate_expand_cr = 1
-
-" sessionman REMOVE?
-nmap <leader>S :SessionList<CR>
-nmap <leader>SS :SessionSave<CR>
-nmap <leader>SA :SessionSaveAs<CR>
-
-" minibufexpl REMOVE?
-let g:miniBufExplVSplit = 25
-let g:miniBufExplorerMoreThanOne = 100
-let g:miniBufExplUseSingleClick = 1
-nmap <Leader>b :MiniBufExplorer<cr>
-
 " }}}
 
 " _ Vim {{{
