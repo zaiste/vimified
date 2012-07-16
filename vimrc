@@ -71,7 +71,6 @@ if count(g:vimified_packages, 'general')
     Bundle 'michaeljsmith/vim-indent-object'
     let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
-    Bundle 'mirell/vim-matchit'
     Bundle 'kien/ctrlp.vim'
     Bundle 'vim-scripts/scratch.vim'
 
@@ -146,7 +145,6 @@ if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-haml'
     Bundle 'juvenn/mustache.vim'
     Bundle 'tpope/vim-markdown'
-    Bundle 'Ampersandy/sparkup'
 endif
 " }}}
 
@@ -189,6 +187,7 @@ if count(g:vimified_packages, 'color')
     Bundle 'zaiste/Atom'
 endif
 " }}}
+" }}}
 
 " General {{{
 filetype plugin indent on
@@ -199,7 +198,6 @@ syntax on
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " }}}
-
 
 " Mappings {{{
 
@@ -220,7 +218,7 @@ nmap <silent> <leader>n :set invnumber<CR>
 nmap <silent> <leader>p :set invpaste<CR>
 nmap <silent> <leader>i :set invrelativenumber<CR>
 
-nmap ; :<CR>
+nmap ; :
 
 " Emacs bindings in command line mode
 cnoremap <c-a> <home>
@@ -310,7 +308,7 @@ set dictionary=/usr/share/dict/words
 " Save when losing focus
 au FocusLost    * :silent! wall
 
-
+" }}}
 
 " Cursorline {{{
 " Only show cursorline in the current window and in normal mode.
@@ -330,6 +328,8 @@ augroup trailing
     au InsertEnter * :set listchars-=trail:⌴
     au InsertLeave * :set listchars+=trail:⌴
 augroup END
+
+" }}}
 
 " . searching {{{
 
@@ -360,6 +360,18 @@ nnoremap g, g,zz
 " Open a Quickfix window for the last search.
 nnoremap <silent> <leader>? :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
 
+" Highlight word {{{
+
+nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
+" }}}
+
+" }}}
+
+" Navigation & UI {{{
+
 " Begining & End of line in Normal mode 
 noremap H ^
 noremap L g_
@@ -389,14 +401,6 @@ nmap <C-Up> [e
 nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
-
-" Highlight word {{{
-
-nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
-" }}}
 
 " }}}
 
@@ -433,7 +437,7 @@ endfunction " }}}
 set foldtext=MyFoldText()
 
 " }}}
-"
+
 " Quick editing {{{
 
 nnoremap <leader>ev <C-w>s<C-w>j:e $MYVIMRC<cr>
@@ -441,8 +445,6 @@ nnoremap <leader>es <C-w>s<C-w>j:e ~/.vim/snippets/<cr>
 nnoremap <leader>eg <C-w>s<C-w>j:e ~/.gitconfig<cr>
 nnoremap <leader>ez <C-w>s<C-w>j:e ~/.zshrc<cr>
 nnoremap <leader>et <C-w>s<C-w>j:e ~/.tmux.conf<cr>
-
-" }}}
 
 " --------------------
 
@@ -471,10 +473,6 @@ let g:miniBufExplVSplit = 25
 let g:miniBufExplorerMoreThanOne = 100
 let g:miniBufExplUseSingleClick = 1
 nmap <Leader>b :MiniBufExplorer<cr>
-
-
-" Fugitive
-
 
 " }}}
 
