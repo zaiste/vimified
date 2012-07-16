@@ -46,7 +46,7 @@ if count(g:vimified_packages, 'general')
     Bundle "mileszs/ack.vim"
     nnoremap <leader>a :Ack!<space>
 
-    Bundle 'matthias-guenther/hammer.vim' 
+    Bundle 'matthias-guenther/hammer.vim'
     nmap <leader>p :Hammer<cr>
 
     Bundle 'tsaleh/vim-align'
@@ -89,7 +89,7 @@ endif
 " _. OS {{{
 if count(g:vimified_packages, 'os')
     Bundle 'zaiste/tmux.vim'
-    Bundle 'benmills/vimux' 
+    Bundle 'benmills/vimux'
     map <Leader>rp :PromptVimTmuxCommand<CR>
     map <Leader>rl :RunLastVimTmuxCommand<CR>
 
@@ -99,6 +99,7 @@ endif
 " }}}
 
 " _. Coding {{{
+
 if count(g:vimified_packages, 'coding')
     Bundle 'majutsushi/tagbar' 
     nmap <leader>t :TagbarToggle<CR>
@@ -137,6 +138,7 @@ if count(g:vimified_packages, 'ruby')
     Bundle 'ecomba/vim-ruby-refactoring'
 
     autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et
+    autocmd User Rails set tabstop=2 shiftwidth=2 noexpandtab
 endif
 " }}}
 
@@ -158,7 +160,7 @@ if count(g:vimified_packages, 'js')
 endif
 " }}}
 
-" _. Clojure {{{ 
+" _. Clojure {{{
 if count(g:vimified_packages, 'clojure')
     Bundle 'zaiste/VimClojure'
 
@@ -187,11 +189,13 @@ if count(g:vimified_packages, 'color')
     Bundle 'zaiste/Atom'
 endif
 " }}}
+
 " }}}
 
 " General {{{
 filetype plugin indent on
-colorscheme badwolf 
+colorscheme badwolf
+set background=dark
 syntax on
 
 " Highlight VCS conflict markers
@@ -201,7 +205,19 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " Mappings {{{
 
+" You want to be part of the gurus? Time to get in serious stuff and stop using
+" arrow keys.
+noremap <left> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <right> <nop>
+
+" Yank from current cursor position to end of line
 map Y y$
+" Yank content in OS's clipboard
+vmap <leader>y "*y
+" Paste content from OS's clipboard
+nmap <leader>p "*p
 
 " bracket match using tab
 map <tab> %
@@ -226,7 +242,7 @@ cnoremap <c-e> <end>
 
 " Source current line
 vnoremap <leader>L y:execute @@<cr>
-" Source visual selection 
+" Source visual selection
 nnoremap <leader>L ^vg_y:execute @@<cr>
 
 " w!! to write a file as sudo
@@ -242,15 +258,15 @@ iabbrev z@ oh@zaiste.net
 " . }}}
 
 " Settings {{{
-set autoread 
+set autoread
 set backspace=indent,eol,start
 set binary
 set cinoptions=:0,(s,u0,U1,g0,t0
 set completeopt=menuone,preview
-set hidden 
+set hidden
 set history=1000
-set incsearch 
-set laststatus=2 
+set incsearch
+set laststatus=2
 set list
 set encoding=utf-8
 " Disable the macvim toolbar
@@ -263,21 +279,21 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 
-" _ backups {{{ 
+" _ backups {{{
 set undodir=~/.vim/tmp/undo//     " undo files
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
-set backup 
-set noswapfile 
+set backup
+set noswapfile
 " _ }}}
 
-set modelines=0 
+set modelines=0
 set noeol
 set relativenumber
 set numberwidth=10
-set ruler 
-set shell=/bin/zsh 
-set showcmd 
+set ruler
+set shell=/bin/zsh
+set showcmd
 
 set matchtime=2
 
@@ -285,20 +301,19 @@ set completeopt=longest,menuone,preview
 
 " White characters {{{
 set autoindent
-set tabstop=4 
+set tabstop=4
 set textwidth=80
-set shiftwidth=4 
-set softtabstop=4
-set expandtab
-set wrap 
+set shiftwidth=4
+set noexpandtab
+set wrap
 set formatoptions=qrn1
 set colorcolumn=+1
 " }}}
 
-set visualbell 
+set visualbell
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc
-set wildmenu 
+set wildmenu
 
 set dictionary=/usr/share/dict/words
 " }}}
@@ -337,16 +352,16 @@ augroup END
 nnoremap / /\v
 vnoremap / /\v
 
-set ignorecase 
+set ignorecase
 set smartcase
-set showmatch 
+set showmatch
 set gdefault
 set hlsearch
 
 " clear search matching
 noremap <leader><space> :noh<cr>:call clearmatches()<cr>
 
-" Don't jump when using * for search 
+" Don't jump when using * for search
 nnoremap * *<c-o>
 
 " Keep search matches in the middle of the window.
@@ -382,7 +397,7 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-" Easy buffer navigation
+" Easy splitted window navigation
 noremap <C-h>  <C-w>h
 noremap <C-j>  <C-w>j
 noremap <C-k>  <C-w>k
@@ -453,26 +468,11 @@ let g:rubycomplete_buffer_loading = 0
 let g:rubycomplete_classes_in_global = 1
 
 " showmarks
-let g:showmarks_enable = 1 
+let g:showmarks_enable = 1
 hi! link ShowMarksHLl LineNr
 hi! link ShowMarksHLu LineNr
 hi! link ShowMarksHLo LineNr
 hi! link ShowMarksHLm LineNr
-
-" delimitMate REMOVE?
-let g:delimitMate_expand_space = 1
-let g:delimitMate_expand_cr = 1
-
-" sessionman REMOVE?
-nmap <leader>S :SessionList<CR>
-nmap <leader>SS :SessionSave<CR>
-nmap <leader>SA :SessionSaveAs<CR>
-
-" minibufexpl REMOVE?
-let g:miniBufExplVSplit = 25
-let g:miniBufExplorerMoreThanOne = 100
-let g:miniBufExplUseSingleClick = 1
-nmap <Leader>b :MiniBufExplorer<cr>
 
 " }}}
 
