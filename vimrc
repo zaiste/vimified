@@ -194,7 +194,8 @@ endif
 
 " General {{{
 filetype plugin indent on
-colorscheme badwolf 
+colorscheme badwolf
+set background=dark
 syntax on
 
 " Highlight VCS conflict markers
