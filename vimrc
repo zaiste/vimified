@@ -71,7 +71,6 @@ if count(g:vimified_packages, 'general')
     Bundle 'michaeljsmith/vim-indent-object'
     let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
-    Bundle 'mirell/vim-matchit'
     Bundle 'kien/ctrlp.vim'
     Bundle 'vim-scripts/scratch.vim'
 
@@ -146,7 +145,6 @@ if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-haml'
     Bundle 'juvenn/mustache.vim'
     Bundle 'tpope/vim-markdown'
-    Bundle 'Ampersandy/sparkup'
 endif
 " }}}
 
