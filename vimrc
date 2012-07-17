@@ -426,8 +426,8 @@ set foldlevelstart=0
 set foldmethod=syntax
 
 " Space to toggle folds.
-nnoremap <Enter> za
-vnoremap <Enter> za
+nnoremap <space> za
+vnoremap <space> za
 
 " Make zO recursively open whatever top level fold we're in, no matter where the
 " cursor happens to be.
