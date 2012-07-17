@@ -138,7 +138,7 @@ if count(g:vimified_packages, 'ruby')
     Bundle 'ecomba/vim-ruby-refactoring'
 
     autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et
-    autocmd User Rails set tabstop=2 shiftwidth=2 noexpandtab
+    autocmd User Rails set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 endif
 " }}}
 
