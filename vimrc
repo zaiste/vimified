@@ -219,10 +219,10 @@ noremap <right> <nop>
 
 " Yank from current cursor position to end of line
 map Y y$
-" Yank content in OS's clipboard
-vmap <leader>y "*y
+" Yank content in OS's clipboard. `o` stands for "OS's Clipoard".
+vnoremap <leader>yo "*y
 " Paste content from OS's clipboard
-nmap <leader>p "*p
+nnoremap <leader>po "*p
 
 " bracket match using tab
 map <tab> %
