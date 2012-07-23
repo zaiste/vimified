@@ -25,7 +25,7 @@ endif
 " }}}
 
 " PACKAGE LIST {{{
-" Use this variable inside your local configuration to declare 
+" Use this variable inside your local configuration to declare
 " which package you would like to include
 if ! exists('g:vimified_packages')
     let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
@@ -55,7 +55,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-speeddating'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
-    Bundle 'scrooloose/nerdtree' 
+    Bundle 'scrooloose/nerdtree'
     nmap <C-u> :NERDTreeToggle<CR>
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
@@ -101,19 +101,19 @@ endif
 " _. Coding {{{
 
 if count(g:vimified_packages, 'coding')
-    Bundle 'majutsushi/tagbar' 
+    Bundle 'majutsushi/tagbar'
     nmap <leader>t :TagbarToggle<CR>
 
     Bundle 'gregsexton/gitv'
 
-    Bundle 'scrooloose/nerdcommenter' 
+    Bundle 'scrooloose/nerdcommenter'
     nmap <leader># :call NERDComment(0, "invert")<cr>
     vmap <leader># :call NERDComment(0, "invert")<cr>
 
     " - Bundle 'msanders/snipmate.vim'
     Bundle 'sjl/splice.vim'
 
-    Bundle 'tpope/vim-fugitive' 
+    Bundle 'tpope/vim-fugitive'
     nmap <leader>g :Ggrep
     " ,f for global git serach for word under the cursor (with highlight)
     nmap <leader>f :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR>
@@ -253,7 +253,7 @@ cmap w!! w !sudo tee % >/dev/null
 
 " . abbrevs {{{
 "
-iabbrev z@ oh@zaiste.net 
+iabbrev z@ oh@zaiste.net
 
 " . }}}
 
@@ -302,11 +302,11 @@ set completeopt=longest,menuone,preview
 " White characters {{{
 set autoindent
 set tabstop=4
-set textwidth=80
-set shiftwidth=4 
 set softtabstop=4
+set textwidth=80
+set shiftwidth=4
 set expandtab
-set wrap 
+set wrap
 set formatoptions=qrn1
 set colorcolumn=+1
 " }}}
@@ -382,13 +382,14 @@ nnoremap <silent> <leader>hh :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<
 nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
 nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
 nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
+
 " }}}
 
 " }}}
 
 " Navigation & UI {{{
 
-" Begining & End of line in Normal mode 
+" Begining & End of line in Normal mode
 noremap H ^
 noremap L g_
 
