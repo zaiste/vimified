@@ -200,6 +200,9 @@ colorscheme badwolf
 set background=dark
 syntax on
 
+" Set 5 lines to the cursor - when moving vertically
+set scrolloff=5
+
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
