@@ -338,6 +338,9 @@ set dictionary=/usr/share/dict/words
 
 " Save when losing focus
 au FocusLost    * :silent! wall
+"
+" When vimrc is edited, reload it
+autocmd! BufWritePost vimrc source ~/.vimrc
 
 " }}}
 
