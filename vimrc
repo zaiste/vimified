@@ -274,12 +274,16 @@ set backspace=indent,eol,start
 set binary
 set cinoptions=:0,(s,u0,U1,g0,t0
 set completeopt=menuone,preview
+set encoding=utf-8
 set hidden
 set history=1000
 set incsearch
 set laststatus=2
 set list
-set encoding=utf-8
+
+" Don't redraw while executing macros
+set nolazyredraw
+
 " Disable the macvim toolbar
 set guioptions-=T
 
