@@ -157,6 +157,8 @@ endif
 if count(g:vimified_packages, 'js')
     Bundle 'kchmck/vim-coffee-script'
     Bundle 'alfredodeza/jacinto.vim'
+    au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+    au BufNewFile,BufReadPost *.coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 endif
 " }}}
 
