@@ -233,11 +233,11 @@ noremap <silent><Leader>/ :nohls<CR>
 " better ESC
 inoremap jk <Esc>
 
-nmap <silent> <leader>h :set invhlsearch<CR>
-nmap <silent> <leader>l :set invlist<CR>
-nmap <silent> <leader>n :set invnumber<CR>
-nmap <silent> <leader>p :set invpaste<CR>
-nmap <silent> <leader>i :set invrelativenumber<CR>
+nmap <silent> <leader>hh :set invhlsearch<CR>
+nmap <silent> <leader>ll :set invlist<CR>
+nmap <silent> <leader>nn :set invnumber<CR>
+nmap <silent> <leader>pp :set invpaste<CR>
+nmap <silent> <leader>ii :set invrelativenumber<CR>
 
 nmap ; :
 
