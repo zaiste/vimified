@@ -310,6 +310,8 @@ set ruler
 set shell=/bin/zsh
 set showcmd
 
+set exrc
+
 set matchtime=2
 
 set completeopt=longest,menuone,preview
