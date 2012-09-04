@@ -155,6 +155,9 @@ endif
 " }}}
 
 " _. CSS {{{
+if count(g:vimified_packages, 'css')
+    Bundle 'wavded/vim-stylus'
+endif
 " }}}
 
 " _. JS {{{
