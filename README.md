@@ -176,7 +176,7 @@ gitk for Vim.
 
 Vim plugin for intensely orgasmic commenting.
 
-**Command:** `,/`
+**Command:** `,#`
 
 #### [splice.vim](https://github.com/sjl/splice.vim)
 
