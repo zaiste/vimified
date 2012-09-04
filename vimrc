@@ -196,13 +196,14 @@ if count(g:vimified_packages, 'color')
     Bundle 'altercation/vim-colors-solarized'
     Bundle 'tomasr/molokai'
     Bundle 'zaiste/Atom'
+    Bundle 'w0ng/vim-hybrid'
 endif
 " }}}
 " }}}
 
 " General {{{
 filetype plugin indent on
-colorscheme badwolf 
+colorscheme hybrid 
 syntax on
 
 " Highlight VCS conflict markers
