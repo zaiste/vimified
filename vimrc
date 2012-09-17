@@ -41,6 +41,13 @@ Bundle 'gmarik/vundle'
 
 " PACKAGES {{{
 
+" Install user-supplied Bundles {{{
+let s:extrarc = expand($HOME . '/.vim/extra.vimrc')
+if filereadable(s:extrarc)
+    exec ':so ' . s:extrarc
+endif
+" }}}
+
 " _. General {{{
 if count(g:vimified_packages, 'general')
     Bundle "mileszs/ack.vim"
