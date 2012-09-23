@@ -319,7 +319,9 @@ set noeol
 set relativenumber
 set numberwidth=10
 set ruler
-set shell=/bin/zsh
+if executable('/bin/zsh')
+  set shell=/bin/zsh
+endif
 set showcmd
 
 set exrc
