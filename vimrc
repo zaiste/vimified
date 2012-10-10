@@ -74,7 +74,8 @@ if count(g:vimified_packages, 'general')
     Bundle 'kien/ctrlp.vim'
     Bundle 'vim-scripts/scratch.vim'
 
-    Bundle 'vim-scripts/bufexplorer.zip'
+    Bundle 'troydm/easybuffer.vim'
+    nmap <leader>be :EasyBufferToggle<enter>
 endif
 " }}}
 
