@@ -71,6 +71,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'michaeljsmith/vim-indent-object'
     let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
+    Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
     Bundle 'vim-scripts/scratch.vim'
 
@@ -319,7 +320,9 @@ set noeol
 set relativenumber
 set numberwidth=10
 set ruler
-set shell=/bin/zsh
+if executable('/bin/zsh')
+  set shell=/bin/zsh
+endif
 set showcmd
 
 set exrc
