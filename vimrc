@@ -269,6 +269,11 @@ nmap <silent> <leader>nn :set invnumber<CR>
 nmap <silent> <leader>pp :set invpaste<CR>
 nmap <silent> <leader>ii :set invrelativenumber<CR>
 
+" Since <C-j> & <C-k> do nothing, I prefer those to go up and go down by 10
+" lines
+noremap <C-j> 10j
+noremap <C-k> 10k
+
 nmap ; :
 
 " Emacs bindings in command line mode
