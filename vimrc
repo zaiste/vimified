@@ -276,6 +276,9 @@ noremap <C-k> 10k
 
 nmap ; :
 
+" Seriously, guys. It's not like :W is bound to anything anyway.
+command! W :w
+
 " Emacs bindings in command line mode
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
