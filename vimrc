@@ -214,6 +214,13 @@ syntax on
 " Set 5 lines to the cursor - when moving vertically
 set scrolloff=5
 
+" It defines where to look for the buffer user demanding (current window, all
+" windows in other tabs, or nowhere, i.e. open file from scratch every time) and
+" how to open the buffer (in the new split, tab, or in the current window).
+
+" This orders Vim to open the buffer.
+set switchbuf=useopen
+
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
