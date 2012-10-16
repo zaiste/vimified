@@ -216,6 +216,13 @@ syntax on
 " Set 5 lines to the cursor - when moving vertically
 set scrolloff=5
 
+" It defines where to look for the buffer user demanding (current window, all
+" windows in other tabs, or nowhere, i.e. open file from scratch every time) and
+" how to open the buffer (in the new split, tab, or in the current window).
+
+" This orders Vim to open the buffer.
+set switchbuf=useopen
+
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
@@ -237,8 +244,20 @@ vnoremap <leader>yo "*y
 " Paste content from OS's clipboard
 nnoremap <leader>po "*p
 
-" bracket match using tab
-map <tab> %
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
 
 " clear highlight after search
 noremap <silent><Leader>/ :nohls<CR>
@@ -254,6 +273,9 @@ nmap <silent> <leader>ii :set invrelativenumber<CR>
 
 nmap ; :
 
+" Seriously, guys. It's not like :W is bound to anything anyway.
+command! W :w
+
 " Emacs bindings in command line mode
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
@@ -263,8 +285,6 @@ vnoremap <leader>L y:execute @@<cr>
 " Source visual selection
 nnoremap <leader>L ^vg_y:execute @@<cr>
 
-" Fast saving
-nmap <leader>w :w!<cr>
 " Fast saving and closing current buffer without closing windows displaying the
 " buffer
 nmap <leader>wq :w!<cr>:Bclose<cr>
