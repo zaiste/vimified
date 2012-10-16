@@ -288,8 +288,6 @@ vnoremap <leader>L y:execute @@<cr>
 " Source visual selection
 nnoremap <leader>L ^vg_y:execute @@<cr>
 
-" Fast saving
-nmap <leader>w :w!<cr>
 " Fast saving and closing current buffer without closing windows displaying the
 " buffer
 nmap <leader>wq :w!<cr>:Bclose<cr>
