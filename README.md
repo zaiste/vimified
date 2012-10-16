@@ -289,8 +289,9 @@ Ultimate auto-completion system for Vim.
 
 If you have ideas on how to make this Vim configration framework better, don’t hesitate to fork and send pull requests. Thanks!
 
-### Contributors
+### Major Contributors
 
+ * [Adrien Giboire](https://github.com/AdrienGiboire)
  * [sharnik](https://github.com/sharnik)
 
 ### Inspired by 
