@@ -47,6 +47,7 @@ fi¬
 ¬
 echo "let g:vimified_packages = ['general', 'fancy', 'css', 'js', 'os', 'html', 'coding', 'color']" > local.vimrc¬
 ¬
+# TODO: Find a way to get rid of the need the user press Enter AND to avoid the Vim warning.
 echo "Press 'Enter' to continue installing all the bundles."¬
 vim +BundleInstall +qall 2>/dev/null¬
 ¬
