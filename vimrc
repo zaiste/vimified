@@ -55,6 +55,8 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-speeddating'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
+    Bundle 'maxbrunsfeld/vim-yankstack'
+
     Bundle 'scrooloose/nerdtree'
     nmap <C-u> :NERDTreeToggle<CR>
     " Disable the scrollbars (NERDTree)
