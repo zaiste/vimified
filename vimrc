@@ -461,7 +461,7 @@ noremap <leader>bn :bnext<cr>
 
 " Splits ,v and ,h to open new splits (vertical and horizontal)
 nnoremap <leader>v <C-w>v<C-w>l
-nnoremap <leader>s <C-w>s<C-w>j
+nnoremap <leader>h <C-w>s<C-w>j
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
