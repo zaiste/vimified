@@ -56,6 +56,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
     Bundle 'maxbrunsfeld/vim-yankstack'
+    Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
     nmap <C-u> :NERDTreeToggle<CR>
@@ -275,10 +276,6 @@ nnoremap <leader>L ^vg_y:execute @@<cr>
 " Fast saving and closing current buffer without closing windows displaying the
 " buffer
 nmap <leader>wq :w!<cr>:Bclose<cr>
-
-" w!! to write a file as sudo
-" stolen from Steve Losh
-cmap w!! w !sudo tee % >/dev/null
 
 " }}}
 
