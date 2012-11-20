@@ -1,4 +1,4 @@
-#!/usr/env sh¬
+#!/usr/env sh
 
 create_symlinks () {
     if [ ! -f ~/.vim ]; then
