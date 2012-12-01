@@ -68,7 +68,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'vim-scripts/YankRing.vim'
     let g:yankring_replace_n_pkey = '<leader>['
     let g:yankring_replace_n_nkey = '<leader>]'
-    let g:yankring_history_dir = '~/.vim/tmp'
+    let g:yankring_history_dir = '~/.vim/tmp/'
     nmap <leader>y :YRShow<cr>
 
     Bundle 'michaeljsmith/vim-indent-object'
