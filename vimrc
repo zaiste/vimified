@@ -95,11 +95,10 @@ endif
 if count(g:vimified_packages, 'os')
     Bundle 'zaiste/tmux.vim'
     Bundle 'benmills/vimux'
-    map <Leader>rp :PromptVimTmuxCommand<CR>
-    map <Leader>rl :RunLastVimTmuxCommand<CR>
+    map <Leader>rp :VimuxPromptCommand<CR>
+    map <Leader>rl :VimuxRunLastCommand<CR>
 
-    vmap <LocalLeader>rs "vy :call RunVimTmuxCommand(@v . "\n", 0)<CR>
-    nmap <LocalLeader>rs vip<LocalLeader>rs<CR>
+    map <LocalLeader>d :call VimuxRunCommand(@v, 0)<CR>
 endif
 " }}}
 
@@ -477,6 +476,7 @@ vmap <C-Down> ]egv
 
 set foldlevelstart=0
 set foldmethod=syntax
+set foldignore=
 
 " Space to toggle folds.
 nnoremap <space> za
