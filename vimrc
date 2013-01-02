@@ -259,8 +259,6 @@ nmap <silent> <leader>nn :set invnumber<CR>
 nmap <silent> <leader>pp :set invpaste<CR>
 nmap <silent> <leader>ii :set invrelativenumber<CR>
 
-nmap ; :
-
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
 
