@@ -479,7 +479,6 @@ vmap <C-Down> ]egv
 
 set foldlevelstart=0
 set foldmethod=syntax
-set foldignore=
 
 " Space to toggle folds.
 nnoremap <space> za
