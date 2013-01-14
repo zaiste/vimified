@@ -156,6 +156,7 @@ if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-markdown'
     Bundle 'digitaltoad/vim-jade'
     Bundle 'slim-template/vim-slim'
+    Bundle 'tristen/vim-sparkup'
 
     au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.html setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
@@ -182,10 +183,9 @@ endif
 
 " _. Clojure {{{
 if count(g:vimified_packages, 'clojure')
-    Bundle 'zaiste/VimClojure'
-
-    let vimclojure#HighlightBuiltins=1
-    let vimclojure#ParenRainbow=0
+    Bundle 'guns/vim-clojure-static'
+    Bundle 'tpope/vim-foreplay'
+    Bundle 'tpope/vim-classpath'
 endif
 " }}}
 
