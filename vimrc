@@ -85,8 +85,7 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-    Bundle 'Lokaltog/powerline'
-    python from powerline.ext.vim import source_plugin; source_plugin()
+    Bundle 'Lokaltog/vim-powerline'
 endif
 " }}}
 
