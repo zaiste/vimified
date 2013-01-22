@@ -59,7 +59,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
-    nmap <C-u> :NERDTreeToggle<CR>
+    nmap <C-n> :NERDTreeToggle<CR>
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
