@@ -127,10 +127,12 @@ if count(g:vimified_packages, 'coding')
     Bundle 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=1
+    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'js'], 'passive_filetypes': ['html', 'css', 'slim'] }
 
     " --
 
     autocmd FileType gitcommit set tw=68 spell
+    autocmd FileType gitcommit setlocal foldmethod=manual
 endif
 " }}}
 
@@ -154,6 +156,7 @@ if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-markdown'
     Bundle 'digitaltoad/vim-jade'
     Bundle 'slim-template/vim-slim'
+    Bundle 'tristen/vim-sparkup'
 
     au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.html setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
@@ -180,10 +183,9 @@ endif
 
 " _. Clojure {{{
 if count(g:vimified_packages, 'clojure')
-    Bundle 'zaiste/VimClojure'
-
-    let vimclojure#HighlightBuiltins=1
-    let vimclojure#ParenRainbow=0
+    Bundle 'guns/vim-clojure-static'
+    Bundle 'tpope/vim-foreplay'
+    Bundle 'tpope/vim-classpath'
 endif
 " }}}
 
@@ -477,7 +479,6 @@ vmap <C-Down> ]egv
 
 set foldlevelstart=0
 set foldmethod=syntax
-set foldignore=
 
 " Space to toggle folds.
 nnoremap <space> za
