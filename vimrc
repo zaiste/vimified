@@ -33,7 +33,8 @@ endif
 " }}}
 
 " VUNDLE {{{
-set rtp+=~/.vim/bundle/vundle/
+let s:bundle_path=$HOME."/.vim/bundle/"
+execute "set rtp+=".s:bundle_path."vundle/"
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -85,7 +86,11 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-    Bundle 'Lokaltog/vim-powerline'
+    if has('python') || has('python3')
+        Bundle 'Lokaltog/powerline'
+        execute "source ".s:bundle_path."powerline/powerline/bindings/vim/plugin/source_plugin.vim"
+        python from powerline.bindings.vim import source_plugin; source_plugin()
+    endif
 endif
 " }}}
 
