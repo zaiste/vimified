@@ -306,37 +306,6 @@ pyflakes, pep8, mccabe libraries in vim to provide features like python code
 
 looking for bugs, refactoring and some other useful things.
 
-
-This plugin allow you create python code in vim very easily. There is no need to
-
-install the pylint, rope or any used python library on your system.
-
-Python objects and motion (]], 3[[, ]]M, vaC, viM, daC, ciM, ...)
-
-    Folding of python code
-
-    Virtualenv support
-
-    Highlight syntax errors
-
-    Highlight and auto fix unused imports
-
-    Many linters (pylint, pyflakes, ...) that can be run simultaneously
-
-    Strong code completion
-
-    Code refactoring
-
-    Python documentation
-
-    Run python code
-
-    Go to definition
-
-    Powerful customization
-
-    And more, more ...
-
 ####
 
 #### Clang
