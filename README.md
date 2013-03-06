@@ -296,6 +296,36 @@ An unpacked copy of the haskellmode vimball. Ping me if it needs updating.
 
 ####
 
+### Python
+
+#### [python-mode](https://github.com/klen/python-mode)
+
+Python-mode is a vim plugin that allows you to use the pylint, rope, pydoc,
+
+pyflakes, pep8, mccabe libraries in vim to provide features like python code
+
+looking for bugs, refactoring and some other useful things.
+
+####
+
+#### Clang
+
+#### [vim-clang](https://github.com/LucHermitte/vim-clang)
+
+Module to Interact with libclang (and clang_indexer DB) from Vim.
+
+#### [vim-scripts/c.vim](https://github.com/vim-scripts/c.vim)
+
+   Statement oriented editing of  C / C++ programs
+
+   Speed up writing new code considerably.
+
+   Write code und comments with a professional appearance from the beginning.
+
+   Use code snippets
+
+####
+
 ### Color
 
 #### [badwolf](https://github.com/sjl/badwolf)
