@@ -14,7 +14,7 @@ How to install
 
 Copy/Paste this line in your CLI:
 
-    curl -L https://raw.github.com/zaiste/vimified/master/install.sh | sh
+    curl -L https://raw.github.com/AdrienGiboire/vimified/master/install.sh | sh
 
 ### For those who actually care about what is done
 
