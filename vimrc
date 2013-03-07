@@ -24,14 +24,6 @@ if filereadable(s:localrc)
 endif
 " }}}
 
-" PACKAGE LIST {{{
-" Use this variable inside your local configuration to declare
-" which package you would like to include
-if ! exists('g:vimified_packages')
-    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
-endif
-" }}}
-
 " VUNDLE {{{
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -42,169 +34,48 @@ Bundle 'gmarik/vundle'
 " PACKAGES {{{
 
 " _. General {{{
-if count(g:vimified_packages, 'general')
     Bundle "mileszs/ack.vim"
     nnoremap <leader>a :Ack!<space>
-
-    Bundle 'matthias-guenther/hammer.vim'
-    nmap <leader>p :Hammer<cr>
-
-    Bundle 'tsaleh/vim-align'
-    Bundle 'tpope/vim-endwise'
-    Bundle 'tpope/vim-repeat'
-    Bundle 'tpope/vim-speeddating'
-    Bundle 'tpope/vim-surround'
-    Bundle 'tpope/vim-unimpaired'
-    Bundle 'tpope/vim-eunuch'
-
-    Bundle 'scrooloose/nerdtree'
-    nmap <C-n> :NERDTreeToggle<CR>
-    " Disable the scrollbars (NERDTree)
-    set guioptions-=r
-    set guioptions-=L
-
-    Bundle 'kana/vim-textobj-user'
-    Bundle 'michaeljsmith/vim-indent-object'
-    let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
-
-    Bundle 'Spaceghost/vim-matchit'
-    Bundle 'kien/ctrlp.vim'
-    let g:ctrlp_working_path_mode = ''
-
-    Bundle 'vim-scripts/scratch.vim'
-
-    Bundle 'troydm/easybuffer.vim'
-    nmap <leader>be :EasyBufferToggle<enter>
-endif
-" }}}
-
-" _. OS {{{
-if count(g:vimified_packages, 'os')
-    Bundle 'zaiste/tmux.vim'
-    Bundle 'benmills/vimux'
-    map <Leader>rp :VimuxPromptCommand<CR>
-    map <Leader>rl :VimuxRunLastCommand<CR>
-
-    map <LocalLeader>d :call VimuxRunCommand(@v, 0)<CR>
-endif
 " }}}
 
 " _. Coding {{{
-
-if count(g:vimified_packages, 'coding')
-    Bundle 'majutsushi/tagbar'
-    nmap <leader>t :TagbarToggle<CR>
-
-    Bundle 'gregsexton/gitv'
-
-    Bundle 'scrooloose/nerdcommenter'
-    nmap <leader># :call NERDComment(0, "invert")<cr>
-    vmap <leader># :call NERDComment(0, "invert")<cr>
-
-    " - Bundle 'msanders/snipmate.vim'
-    Bundle 'sjl/splice.vim'
-
-    Bundle 'tpope/vim-fugitive'
-    nmap <leader>g :Ggrep
-    " ,f for global git serach for word under the cursor (with highlight)
-    nmap <leader>f :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR>
-    " same in visual mode
-    :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
-
     Bundle 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=1
     let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'js'], 'passive_filetypes': ['html', 'css', 'slim'] }
 
-    " --
-
-    autocmd FileType gitcommit set tw=68 spell
-    autocmd FileType gitcommit setlocal foldmethod=manual
-endif
 " }}}
 
 " _. Color {{{
-if count(g:vimified_packages, 'color')
     Bundle 'altercation/vim-colors-solarized'
     colorscheme solarized
     set background=dark
-endif
 " }}}
 
 " _. Fancy {{{
-if count(g:vimified_packages, 'fancy')
     if has('python') || has('python3')
         Bundle 'Lokaltog/powerline'
         source $HOME/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
         python from powerline.bindings.vim import source_plugin; source_plugin()
     endif
-endif
 " }}}
 
 " _. Ruby {{{
-if count(g:vimified_packages, 'ruby')
-    Bundle 'vim-ruby/vim-ruby'
-    Bundle 'tpope/vim-rails'
-    Bundle 'nelstrom/vim-textobj-rubyblock'
-    Bundle 'ecomba/vim-ruby-refactoring'
-
-    autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et
-    autocmd FileType ruby,eruby,yaml setlocal foldmethod=manual
-    autocmd User Rails set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-endif
 " }}}
 
 " _. HTML {{{
-if count(g:vimified_packages, 'html')
-    Bundle 'tpope/vim-haml'
-    Bundle 'juvenn/mustache.vim'
-    Bundle 'tpope/vim-markdown'
-    Bundle 'digitaltoad/vim-jade'
-    Bundle 'slim-template/vim-slim'
-    Bundle 'tristen/vim-sparkup'
-
-    au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-    au BufNewFile,BufReadPost *.html setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-    au BufNewFile,BufReadPost *.slim setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-endif
 " }}}
 
 " _. CSS {{{
 if count(g:vimified_packages, 'css')
-    Bundle 'wavded/vim-stylus'
 endif
 " }}}
 
 " _. JS {{{
-if count(g:vimified_packages, 'js')
     Bundle 'kchmck/vim-coffee-script'
     au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-
-    Bundle 'alfredodeza/jacinto.vim'
-    au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-    au BufNewFile,BufReadPost *.coffee setl tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-endif
 " }}}
 
-" _. Clojure {{{
-if count(g:vimified_packages, 'clojure')
-    Bundle 'guns/vim-clojure-static'
-    Bundle 'tpope/vim-foreplay'
-    Bundle 'tpope/vim-classpath'
-endif
-" }}}
-
-" _. Haskell {{{
-if count(g:vimified_packages, 'haskell')
-    Bundle 'Twinside/vim-syntax-haskell-cabal'
-    Bundle 'lukerandall/haskellmode-vim'
-
-    au BufEnter *.hs compiler ghc
-
-    let g:ghc = "/usr/local/bin/ghc"
-    let g:haddock_browser = "open"
-endif
-" }}}
 
 " }}}
 
