@@ -147,6 +147,19 @@ if count(g:vimified_packages, 'ruby')
 endif
 " }}}
 
+" _. Python {{{
+if count(g:vimified_packages, 'python')
+    Bundle 'klen/python-mode'
+endif
+" }}}
+
+" _. Clang {{{
+if count(g:vimified_packages, 'clang')
+    Bundle 'LucHermitte/vim-clang'
+    Bundle 'vim-scripts/c.vim'
+endif
+" }}}
+
 " _. HTML {{{
 if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-haml'
