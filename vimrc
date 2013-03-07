@@ -52,14 +52,6 @@ Bundle 'gmarik/vundle'
     set background=dark
 " }}}
 
-" _. Fancy {{{
-    if has('python') || has('python3')
-        Bundle 'Lokaltog/powerline'
-        source $HOME/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
-        python from powerline.bindings.vim import source_plugin; source_plugin()
-    endif
-" }}}
-
 " _. Ruby {{{
 " }}}
 
