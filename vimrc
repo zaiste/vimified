@@ -33,8 +33,7 @@ endif
 " }}}
 
 " VUNDLE {{{
-let s:bundle_path=$HOME."/.vim/bundle/"
-execute "set rtp+=".s:bundle_path."vundle/"
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -56,7 +55,6 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-speeddating'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
-    Bundle 'maxbrunsfeld/vim-yankstack'
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
@@ -66,31 +64,17 @@ if count(g:vimified_packages, 'general')
     set guioptions-=L
 
     Bundle 'kana/vim-textobj-user'
-    Bundle 'vim-scripts/YankRing.vim'
-    let g:yankring_replace_n_pkey = '<leader>['
-    let g:yankring_replace_n_nkey = '<leader>]'
-    let g:yankring_history_dir = '~/.vim/tmp/'
-    nmap <leader>y :YRShow<cr>
-
     Bundle 'michaeljsmith/vim-indent-object'
     let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
     Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
+    let g:ctrlp_working_path_mode = ''
+
     Bundle 'vim-scripts/scratch.vim'
 
     Bundle 'troydm/easybuffer.vim'
     nmap <leader>be :EasyBufferToggle<enter>
-endif
-" }}}
-
-" _. Fancy {{{
-if count(g:vimified_packages, 'fancy')
-    if has('python') || has('python3')
-        Bundle 'Lokaltog/powerline'
-        execute "source ".s:bundle_path."powerline/powerline/bindings/vim/plugin/source_plugin.vim"
-        python from powerline.bindings.vim import source_plugin; source_plugin()
-    endif
 endif
 " }}}
 
@@ -136,6 +120,24 @@ if count(g:vimified_packages, 'coding')
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
+endif
+" }}}
+
+" _. Color {{{
+if count(g:vimified_packages, 'color')
+    Bundle 'altercation/vim-colors-solarized'
+    colorscheme solarized
+    set background=dark
+endif
+" }}}
+
+" _. Fancy {{{
+if count(g:vimified_packages, 'fancy')
+    if has('python') || has('python3')
+        Bundle 'Lokaltog/powerline'
+        source $HOME/.vim/bundle/powerline/powerline/bindings/vim/plugin/source_plugin.vim
+        python from powerline.bindings.vim import source_plugin; source_plugin()
+    endif
 endif
 " }}}
 
@@ -204,21 +206,10 @@ if count(g:vimified_packages, 'haskell')
 endif
 " }}}
 
-" _. Color {{{
-if count(g:vimified_packages, 'color')
-    Bundle 'sjl/badwolf'
-    Bundle 'altercation/vim-colors-solarized'
-    Bundle 'tomasr/molokai'
-    Bundle 'zaiste/Atom'
-    Bundle 'w0ng/vim-hybrid'
-endif
-" }}}
-
 " }}}
 
 " General {{{
 filetype plugin indent on
-colorscheme hybrid
 syntax on
 
 " Set 5 lines to the cursor - when moving vertically
@@ -344,10 +335,10 @@ set completeopt=longest,menuone,preview
 
 " White characters {{{
 set autoindent
-set tabstop=4
-set softtabstop=4
+set tabstop=2
+set softtabstop=2
 set textwidth=80
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 set wrap
 set formatoptions=qrn1
@@ -357,6 +348,7 @@ set colorcolumn=+1
 set visualbell
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc
+set wildignore+=packages,.meteor,node_modules,components
 set wildmenu
 
 set dictionary=/usr/share/dict/words
@@ -570,3 +562,12 @@ if filereadable(expand("~/.vim/after.vimrc"))
   source ~/.vim/after.vimrc
 endif
 " }}}
+
+Bundle 'ryan-cf/netrw'
+let g:netrw_altv          = 1
+let g:netrw_fastbrowse    = 2
+let g:netrw_keepdir       = 0
+let g:netrw_liststyle     = 2
+let g:netrw_retmap        = 1
+let g:netrw_silent        = 1
+let g:netrw_special_syntax= 1
