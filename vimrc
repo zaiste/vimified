@@ -136,6 +136,8 @@ if count(g:vimified_packages, 'coding')
 
     " --
 
+    Bundle 'vim-scripts/Reindent'
+
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
 endif
