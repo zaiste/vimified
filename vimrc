@@ -47,6 +47,7 @@ Bundle 'gmarik/vundle'
     let g:syntastic_auto_loc_list=1
     let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'js'], 'passive_filetypes': ['html', 'css', 'slim'] }
 
+    Bundle 'vim-scripts/Reindent'
 " }}}
 
 " _. Color {{{
