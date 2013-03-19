@@ -59,7 +59,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
-    nmap <C-u> :NERDTreeToggle<CR>
+    nmap <C-n> :NERDTreeToggle<CR>
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
@@ -86,8 +86,6 @@ endif
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
     Bundle 'Lokaltog/vim-powerline'
-    let g:Powerline_symbols = 'fancy'
-    let g:Powerline_cache_enabled = 1
 endif
 " }}}
 
@@ -155,6 +153,13 @@ if count(g:vimified_packages, 'ruby')
     autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et
     autocmd FileType ruby,eruby,yaml setlocal foldmethod=manual
     autocmd User Rails set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+endif
+" }}}
+
+" _. Clang {{{
+if count(g:vimified_packages, 'clang')
+    Bundle 'LucHermitte/vim-clang'
+    Bundle 'vim-scripts/c.vim'
 endif
 " }}}
 
