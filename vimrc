@@ -28,7 +28,7 @@ endif
 " Use this variable inside your local configuration to declare
 " which package you would like to include
 if ! exists('g:vimified_packages')
-    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
+    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'python', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
 endif
 " }}}
 
@@ -127,12 +127,21 @@ if count(g:vimified_packages, 'coding')
     Bundle 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=1
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'js'], 'passive_filetypes': ['html', 'css', 'slim'] }
+    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim'] }
 
     " --
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
+endif
+" }}}
+
+" _. Python {{{
+if count(g:vimified_packages, 'python')
+    Bundle 'klen/python-mode'
+    Bundle 'python.vim'
+    Bundle 'python_match.vim'
+    Bundle 'pythoncomplete'
 endif
 " }}}
 
@@ -155,8 +164,8 @@ if count(g:vimified_packages, 'html')
     Bundle 'juvenn/mustache.vim'
     Bundle 'tpope/vim-markdown'
     Bundle 'digitaltoad/vim-jade'
-    Bundle 'slim-template/vim-slim'
     Bundle 'tristen/vim-sparkup'
+    Bundle 'slim-template/vim-slim'
 
     au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.html setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
@@ -219,7 +228,7 @@ colorscheme hybrid
 syntax on
 
 " Set 5 lines to the cursor - when moving vertically
-set scrolloff=5
+set scrolloff=0
 
 " It defines where to look for the buffer user demanding (current window, all
 " windows in other tabs, or nowhere, i.e. open file from scratch every time) and
