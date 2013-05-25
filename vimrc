@@ -90,6 +90,13 @@ if count(g:vimified_packages, 'fancy')
 endif
 " }}}
 
+" _. Indent {{{
+if count(g:vimified_packages, 'indent')
+  "Bundle 'nathanaelkane/vim-indent-guides'
+  Bundle 'Yggdroot/indentLine'
+endif
+" }}}
+
 " _. OS {{{
 if count(g:vimified_packages, 'os')
     Bundle 'zaiste/tmux.vim'
