@@ -77,6 +77,8 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
+    let g:ctrlp_working_path_mode = ''
+
     Bundle 'vim-scripts/scratch.vim'
 
     Bundle 'troydm/easybuffer.vim'
