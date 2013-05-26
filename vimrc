@@ -33,7 +33,8 @@ endif
 " }}}
 
 " VUNDLE {{{
-set rtp+=~/.vim/bundle/vundle/
+let s:bundle_path=$HOME."/.vim/bundle/"
+execute "set rtp+=".s:bundle_path."vundle/"
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -76,6 +77,8 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
+    let g:ctrlp_working_path_mode = ''
+
     Bundle 'vim-scripts/scratch.vim'
 
     Bundle 'troydm/easybuffer.vim'
@@ -85,7 +88,11 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-    Bundle 'Lokaltog/vim-powerline'
+    if has('python') || has('python3')
+        Bundle 'Lokaltog/powerline'
+        execute "source ".s:bundle_path."powerline/powerline/bindings/vim/plugin/source_plugin.vim"
+        python from powerline.bindings.vim import source_plugin; source_plugin()
+    endif
 endif
 " }}}
 
@@ -128,6 +135,8 @@ if count(g:vimified_packages, 'coding')
     let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim'] }
 
     " --
+
+    Bundle 'vim-scripts/Reindent'
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
