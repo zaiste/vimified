@@ -90,8 +90,8 @@ endif
 if count(g:vimified_packages, 'fancy')
     if has('python') || has('python3')
         Bundle 'Lokaltog/powerline'
-        execute "source ".s:bundle_path."powerline/powerline/bindings/vim/plugin/source_plugin.vim"
-        python from powerline.bindings.vim import source_plugin; source_plugin()
+        execute "source ".s:bundle_path."powerline/powerline/bindings/vim/plugin/powerline.vim"
+        python from powerline.vim import setup as powerline_setup; powerline_setup(); del powerline_setup
     endif
 endif
 " }}}
