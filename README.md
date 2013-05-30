@@ -68,6 +68,7 @@ Avaible packages:
 
  * general
  * fancy
+ * indent
  * os
  * coding
  * ruby
@@ -75,7 +76,7 @@ Avaible packages:
  * css
  * js
  * clojure
- * haskel
+ * haskell
  * color
 
 ### General
@@ -116,31 +117,33 @@ surround.vim: quoting/parenthesizing made simple
 
 unimpaired.vim: pairs of handy bracket mappings
 
+#### [vim-yankstack](https://github.com/maxbrunsfeld/vim-yankstack)
+
+lightweight implementation of emacs' kill ring for vim
+
+#### [vim-eunuch](https://github.com/tpope/vim-eunuch)
+
+eunuch.vim: helpers for UNIX
+
 #### [nerdtree](https://github.com/scrooloose/nerdtree)
 
 A tree explorer plugin for vim.
 
 **Command:** `ctrl-u`
 
-#### [vim-space](https://github.com/spiiph/vim-space)
-
-space.vim - Smart Space key for Vim
-
 #### [vim-textobj-user](https://github.com/kana/vim-textobj-user)
 
 Vim plugin: Support for user-defined text objects
 
-#### [vim-yankring](https://github.com/chrismetcalf/vim-yankring)
+#### [YankRink.vim](https://github.com/vim-scripts/YankRing.vim)
 
-Mirror of yankring.vim
-
-**Command:** `,y`
+Maintains a history of previous yanks, changes and deletes.
 
 #### [vim-ident-object](https://github.com/michaeljsmith/vim-indent-object)
 
 Vim plugin that defines a new text object representing lines of code at the same indent level. Useful for python/vim scripts, etc.
 
-#### [vim-matchit](https://github.com/mirell/vim-matchit)
+#### [vim-matchit](https://github.com/Spaceghost/vim-matchit)
 
 The matchit.vim script allows you to configure % to match more than just single characters.
 
@@ -152,9 +155,13 @@ Fuzzy file, buffer, mru and tag finder.
 
 ![ctrlp view](http://f.cl.ly/items/393i0b0N2C1H1e0Q2K3k/ctrlp.png)
 
-#### [bufexplorer](https://github.com/vim-scripts/bufexplorer.zip)
+#### [vim-scripts/scratch.vim](https://github.com/vim-scripts/scratch.vim)
 
-Buffer Explorer / Browser.
+Plugin to create and use a scratch Vim buffer.
+
+#### [troydm/easybuffer.vim](https://github.com/troydm/easybuffer.vim)
+
+easybuffer.vim - vim plugin to quickly switch between buffers
 
 ### Fancy
 
@@ -162,11 +169,21 @@ Buffer Explorer / Browser.
 
 The ultimate vim statusline utility.
 
+### Indent
+
+#### [indentLine](https://github.com/Yggdroot/indentLine)
+
+A vim plugin to display the indention levels with thin vertical lines (or: any char you like).
+
 ### OS
 
 #### [tmux.vim](https://github.com/zaiste/tmux.vim)
 
+Tmux vim syntax.
+
 #### [vimux](https://github.com/benmills/vimux)
+
+vim plugin to interact with tmux.
 
 ### Coding
 
@@ -202,6 +219,8 @@ Syntax checking hacks for vim
 
 #### [vim-ruby](https://github.com/vim-ruby/vim-ruby)
 
+Vim/Ruby Configuration Files.
+
 #### [vim-rails](https://github.com/tpope/vim-rails)
 
 rails.vim: Ruby on Rails power tools
@@ -232,11 +251,29 @@ Vim runtime files for Haml, Sass, and SCSS.
 
 Vim syntax file for mustache and handlebars(?)
 
+#### [vim-markdown](https://github.com/tpope/vim-markdown)
+
+Vim Markdown runtime files.
+
+#### [vim-jade](https://github.com/digitaltoad/vim-jade)
+
+Vim Jade template engine syntax highlighting and indention.
+
+#### [vim-slim](https://github.com/slim-template/vim-slim)
+
+A clone of the slim vim plugin from stonean.
+
 ### CSS
+
+#### [vim-stylus](https://github.com/wavded/vim-stylus)
+
+Syntax Highlighting for Stylus.
 
 ### JS
 
 #### [vim-coffee-script](https://github.com/kchmck/vim-coffee-script)
+
+CoffeeScript support for vim.
 
 #### [jacinto.vim](https://github.com/alfredodeza/jacinto.vim)
 
@@ -252,6 +289,8 @@ or
 
 #### [vimclojure](https://github.com/zaiste/VimClojure)
 
+A filetype, syntax and indent plugin for Clojure.
+
 ### Haskell
 
 [vim-syntax-haskell-cabal](https://github.com/Twinside/vim-syntax-haskell-cabal)
@@ -264,34 +303,59 @@ An unpacked copy of the haskellmode vimball. Ping me if it needs updating.
 
 ####
 
+### Python
+
+#### [python-mode](https://github.com/klen/python-mode)
+
+Python-mode is a vim plugin that allows you to use the pylint, rope, pydoc,
+
+pyflakes, pep8, mccabe libraries in vim to provide features like python code
+
+looking for bugs, refactoring and some other useful things.
+
+####
+
+#### Clang
+
+#### [vim-clang](https://github.com/LucHermitte/vim-clang)
+
+Module to Interact with libclang (and clang_indexer DB) from Vim.
+
+#### [vim-scripts/c.vim](https://github.com/vim-scripts/c.vim)
+
+   Statement oriented editing of  C / C++ programs
+
+   Speed up writing new code considerably.
+
+   Write code und comments with a professional appearance from the beginning.
+
+   Use code snippets
+
+####
+
 ### Color
 
-#### [molokai](https://github.com/tomasr/molokai)
+#### [badwolf](https://github.com/sjl/badwolf)
 
-Molokai color scheme for Vim.
+A Vim color scheme.
 
 ####
 [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
 precision colorscheme for the vim text editor
 
-#### [badwolf](https://github.com/sjl/badwolf)
+#### [molokai](https://github.com/tomasr/molokai)
 
-A Vim color scheme.
+Molokai color scheme for Vim.
 
-### Misc
+#### [Atom](https://github.com/zaiste/Atom)
 
-#### [vim-pastie](https://github.com/tpope/vim-pastie)
+Vim color scheme designed to be very readable in both light and dark
+environments.
 
-pastie.vim: interface for pastie.org
+#### [vim-hybrid](https://github.com/w0ng/vim-hybrid)
 
-### Not active
-
-#### [neocomplcache](https://github.com/Shougo/neocomplcache.git)
-
-Ultimate auto-completion system for Vim.
-
-*Disactivated*
+A dark colourscheme combining Jellybeans, Solarized and Tomorrow Night.
 
 ## Call for Help
 
