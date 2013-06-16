@@ -73,6 +73,7 @@ Avaible packages:
 
  * general
  * fancy
+ * indent
  * os
  * coding
  * ruby
@@ -166,6 +167,12 @@ Buffer Explorer / Browser.
 #### [powerline](https://github.com/Lokaltog/vim-powerline)
 
 The ultimate vim statusline utility.
+
+### Indent
+
+#### [indentLine](https://github.com/Yggdroot/indentLine)
+
+A vim plugin to display the indention levels with thin vertical lines (or: any char you like).
 
 ### OS
 
