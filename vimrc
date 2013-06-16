@@ -96,9 +96,9 @@ endif
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
     if has('python') || has('python3')
-        Bundle 'Lokaltog/powerline'
-        execute "source ".s:bundle_path."powerline/powerline/bindings/vim/plugin/powerline.vim"
-        python from powerline.vim import setup as powerline_setup; powerline_setup(); del powerline_setup
+        Bundle 'Lokaltog/vim-powerline'
+        let g:Powerline_symbols = 'fancy'
+        let g:Powerline_cache_enabled = 1
     endif
 endif
 " }}}
@@ -550,6 +550,14 @@ hi! link ShowMarksHLl LineNr
 hi! link ShowMarksHLu LineNr
 hi! link ShowMarksHLo LineNr
 hi! link ShowMarksHLm LineNr
+
+" Indentaion GuidelLines
+set list lcs=tab:\|\
+let g:indentLine_color_term = 111
+let g:indentLine_color_gui = '#DADADA'
+let g:indentLine_char = 'c'
+"let g:indentLine_char = '∙▹¦'
+let g:indentLine_char = '∙'
 
 " }}}
 
