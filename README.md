@@ -53,6 +53,11 @@ You can overwrite default configuration and key bindings by using one of followi
 
 `~/.vim/before.vimrc` will be loaded before everything else.
 
+`~/.vim/extra.vimrc` will be loaded after Vundle is initialized and before
+Vimified settings take place. The idea was so people could add Bundle lines
+without having to worry about conflicts in vimrc when pulling. [Read
+More](https://github.com/zaiste/vimified/pull/27).
+
 `~/.vim/after.vimrc` will be loaded after all configuration options are set. This is best place to change vimified default behaviour (keybindings) and/or color scheme.
 
 Packages
