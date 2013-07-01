@@ -367,7 +367,8 @@ set noswapfile
 set modelines=0
 set noeol
 set relativenumber
-set numberwidth=10
+set numberwidth=3
+set winwidth=83
 set ruler
 if executable('/bin/zsh')
   set shell=/bin/zsh
