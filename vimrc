@@ -33,13 +33,21 @@ endif
 " }}}
 
 " VUNDLE {{{
-set rtp+=~/.vim/bundle/vundle/
+let s:bundle_path=$HOME."/.vim/bundle/"
+execute "set rtp+=".s:bundle_path."vundle/"
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
 " }}}
 
 " PACKAGES {{{
+
+" Install user-supplied Bundles {{{
+let s:extrarc = expand($HOME . '/.vim/extra.vimrc')
+if filereadable(s:extrarc)
+    exec ':so ' . s:extrarc
+endif
+" }}}
 
 " _. General {{{
 if count(g:vimified_packages, 'general')
@@ -76,6 +84,8 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
+    let g:ctrlp_working_path_mode = ''
+
     Bundle 'vim-scripts/scratch.vim'
 
     Bundle 'troydm/easybuffer.vim'
@@ -85,7 +95,23 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-    Bundle 'Lokaltog/vim-powerline'
+    if has('python') || has('python3')
+        Bundle 'Lokaltog/vim-powerline'
+        let g:Powerline_symbols = 'fancy'
+        let g:Powerline_cache_enabled = 1
+    endif
+endif
+" }}}
+
+" _. Indent {{{
+if count(g:vimified_packages, 'indent')
+  Bundle 'Yggdroot/indentLine'
+  set list lcs=tab:\|\
+  let g:indentLine_color_term = 111
+  let g:indentLine_color_gui = '#DADADA'
+  let g:indentLine_char = 'c'
+  "let g:indentLine_char = '∙▹¦'
+  let g:indentLine_char = '∙'
 endif
 " }}}
 
@@ -128,6 +154,8 @@ if count(g:vimified_packages, 'coding')
     let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim'] }
 
     " --
+
+    Bundle 'vim-scripts/Reindent'
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
@@ -319,7 +347,7 @@ set nolazyredraw
 " Disable the macvim toolbar
 set guioptions-=T
 
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 set showbreak=↪
 
 set notimeout
@@ -340,7 +368,8 @@ set noswapfile
 set modelines=0
 set noeol
 set relativenumber
-set numberwidth=10
+set numberwidth=3
+set winwidth=83
 set ruler
 if executable('/bin/zsh')
   set shell=/bin/zsh
@@ -399,8 +428,8 @@ augroup END
 " Only shown when not in insert mode so I don't go insane.
 augroup trailing
     au!
-    au InsertEnter * :set listchars-=trail:⌴
-    au InsertLeave * :set listchars+=trail:⌴
+    au InsertEnter * :set listchars-=trail:␣
+    au InsertLeave * :set listchars+=trail:␣
 augroup END
 
 " Remove trailing whitespaces when saving
