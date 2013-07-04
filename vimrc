@@ -97,7 +97,6 @@ endif
 if count(g:vimified_packages, 'fancy')
     if has('python') || has('python3')
         Bundle 'Lokaltog/vim-powerline'
-        let g:Powerline_symbols = 'fancy'
         let g:Powerline_cache_enabled = 1
     endif
 endif
