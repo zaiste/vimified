@@ -4,7 +4,7 @@
 "
 " Have fun!
 "
-
+"
 set nocompatible
 filetype off
 
@@ -169,7 +169,6 @@ if count(g:vimified_packages, 'html')
     Bundle 'juvenn/mustache.vim'
     Bundle 'tpope/vim-markdown'
     Bundle 'digitaltoad/vim-jade'
-    Bundle 'tristen/vim-sparkup'
     Bundle 'slim-template/vim-slim'
 
     au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
@@ -198,7 +197,7 @@ endif
 " _. Clojure {{{
 if count(g:vimified_packages, 'clojure')
     Bundle 'guns/vim-clojure-static'
-    Bundle 'tpope/vim-foreplay'
+    Bundle 'tpope/vim-fireplace'
     Bundle 'tpope/vim-classpath'
 endif
 " }}}
@@ -222,6 +221,7 @@ if count(g:vimified_packages, 'color')
     Bundle 'tomasr/molokai'
     Bundle 'zaiste/Atom'
     Bundle 'w0ng/vim-hybrid'
+    Bundle 'chriskempson/base16-vim'
 endif
 " }}}
 
@@ -229,7 +229,8 @@ endif
 
 " General {{{
 filetype plugin indent on
-colorscheme hybrid
+colorscheme Tomorrow-Night
+
 syntax on
 
 " Set 5 lines to the cursor - when moving vertically
@@ -267,7 +268,7 @@ nnoremap <leader>po "*p
 noremap <silent><Leader>/ :nohls<CR>
 
 " better ESC
-inoremap jk <Esc>
+inoremap <C-k> <Esc>
 
 nmap <silent> <leader>hh :set invhlsearch<CR>
 nmap <silent> <leader>ll :set invlist<CR>
