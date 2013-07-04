@@ -207,6 +207,8 @@ endif
 " _. CSS {{{
 if count(g:vimified_packages, 'css')
     Bundle 'wavded/vim-stylus'
+    Bundle 'lunaru/vim-less'
+    nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 endif
 " }}}
 
