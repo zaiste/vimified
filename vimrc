@@ -254,6 +254,10 @@ if count(g:vimified_packages, 'color')
     Bundle 'zaiste/Atom'
     Bundle 'w0ng/vim-hybrid'
     Bundle 'chriskempson/base16-vim'
+
+    colorscheme molokai
+else
+    colorscheme default
 endif
 " }}}
 
@@ -261,7 +265,6 @@ endif
 
 " General {{{
 filetype plugin indent on
-colorscheme Tomorrow-Night
 
 syntax on
 
