@@ -98,10 +98,10 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-    if has('python') || has('python3')
-        Bundle 'Lokaltog/vim-powerline'
-        let g:Powerline_cache_enabled = 1
-    endif
+    Bundle 'bling/vim-airline'
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_fugitive_prefix = ''
 endif
 " }}}
 

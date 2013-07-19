@@ -174,9 +174,9 @@ True Sublime Text style multiple selections for Vim
 
 ### Fancy
 
-#### [powerline](https://github.com/Lokaltog/vim-powerline)
+#### [vim-airline](https://github.com/bling/vim-airline)
 
-The ultimate vim statusline utility.
+lean & mean statusline for vim that's light as air
 
 ### Indent
 
