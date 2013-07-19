@@ -67,10 +67,11 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
-    nmap <C-n> :NERDTreeToggle<CR>
+    nmap <C-i> :NERDTreeToggle<CR>
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
+
 
     Bundle 'kana/vim-textobj-user'
     Bundle 'vim-scripts/YankRing.vim'
@@ -90,6 +91,8 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'troydm/easybuffer.vim'
     nmap <leader>be :EasyBufferToggle<enter>
+
+    Bundle 'terryma/vim-multiple-cursors'
 endif
 " }}}
 

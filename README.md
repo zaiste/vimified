@@ -164,9 +164,13 @@ Fuzzy file, buffer, mru and tag finder.
 
 Plugin to create and use a scratch Vim buffer.
 
-#### [troydm/easybuffer.vim](https://github.com/troydm/easybuffer.vim)
+#### [easybuffer.vim](https://github.com/troydm/easybuffer.vim)
 
 easybuffer.vim - vim plugin to quickly switch between buffers
+
+#### [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+
+True Sublime Text style multiple selections for Vim
 
 ### Fancy
 
