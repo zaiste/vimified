@@ -254,6 +254,8 @@ if count(g:vimified_packages, 'color')
     Bundle 'zaiste/Atom'
     Bundle 'w0ng/vim-hybrid'
     Bundle 'chriskempson/base16-vim'
+    Bundle 'Elive/vim-colorscheme-elive'
+    Bundle 'zeis/vim-kolor'
 
     colorscheme molokai
 else
