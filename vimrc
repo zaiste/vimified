@@ -101,7 +101,7 @@ if count(g:vimified_packages, 'fancy')
     Bundle 'bling/vim-airline'
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
-    let g:airline_fugitive_prefix = ''
+    let g:airline_branch_prefix = ''
 endif
 " }}}
 
