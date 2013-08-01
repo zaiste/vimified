@@ -246,6 +246,12 @@ if count(g:vimified_packages, 'haskell')
 endif
 " }}}
 
+" _. Elixir {{{
+if count(g:vimified_packages, 'elixir')
+    Bundle 'elixir-lang/vim-elixir'
+endif
+" }}}
+
 " _. Color {{{
 if count(g:vimified_packages, 'color')
     Bundle 'sjl/badwolf'
