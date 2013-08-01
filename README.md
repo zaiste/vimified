@@ -82,6 +82,7 @@ Avaible packages:
  * js
  * clojure
  * haskell
+ * elixir
  * color
 
 ### General
@@ -302,7 +303,7 @@ A filetype, syntax and indent plugin for Clojure.
 
 ### Haskell
 
-[vim-syntax-haskell-cabal](https://github.com/Twinside/vim-syntax-haskell-cabal)
+#### [vim-syntax-haskell-cabal](https://github.com/Twinside/vim-syntax-haskell-cabal)
 
 Syntax file for Haskell's cabal syntax file
 
@@ -310,7 +311,11 @@ Syntax file for Haskell's cabal syntax file
 
 An unpacked copy of the haskellmode vimball. Ping me if it needs updating.
 
-####
+### Elixir
+
+#### [vim-elixir](https://github.com/elixir-lang/vim-elixir)
+
+Vim configuration files for Elixir.
 
 ### Python
 
@@ -348,8 +353,7 @@ Module to Interact with libclang (and clang_indexer DB) from Vim.
 
 A Vim color scheme.
 
-####
-[vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+#### [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
 precision colorscheme for the vim text editor
 
