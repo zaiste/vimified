@@ -101,7 +101,7 @@ if count(g:vimified_packages, 'fancy')
     Bundle 'bling/vim-airline'
     let g:airline_left_sep = ''
     let g:airline_right_sep = ''
-    let g:airline_fugitive_prefix = ''
+    let g:airline_branch_prefix = ''
 endif
 " }}}
 
@@ -243,6 +243,12 @@ if count(g:vimified_packages, 'haskell')
 
     let g:ghc = "/usr/local/bin/ghc"
     let g:haddock_browser = "open"
+endif
+" }}}
+
+" _. Elixir {{{
+if count(g:vimified_packages, 'elixir')
+    Bundle 'elixir-lang/vim-elixir'
 endif
 " }}}
 
