@@ -370,10 +370,12 @@ set ttimeout
 set ttimeoutlen=10
 
 " _ backups {{{
-set undodir=~/.vim/tmp/undo//     " undo files
-set undofile
-set undolevels=3000
-set undoreload=10000
+if has('persistent_undo')
+  set undodir=~/.vim/tmp/undo//     " undo files
+  set undofile
+  set undolevels=3000
+  set undoreload=10000
+endif
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup
@@ -382,7 +384,9 @@ set noswapfile
 
 set modelines=0
 set noeol
-set relativenumber
+if exists('+relativenumber')
+  set relativenumber
+endif
 set numberwidth=3
 set winwidth=83
 set ruler
@@ -407,7 +411,9 @@ set shiftwidth=4
 set expandtab
 set wrap
 set formatoptions=qrn1
-set colorcolumn=+1
+if exists('+colorcolumn')
+  set colorcolumn=+1
+endif
 " }}}
 
 set visualbell
