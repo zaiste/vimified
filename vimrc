@@ -71,6 +71,8 @@ if count(g:vimified_packages, 'general')
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
+    " Keep NERDTree window fixed between multiple toggles
+    set winfixwidth
 
 
     Bundle 'kana/vim-textobj-user'
