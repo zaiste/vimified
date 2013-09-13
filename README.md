@@ -87,9 +87,10 @@ Avaible packages:
 
 ### General
 
-#### [ack.vim](http://github.com/mileszs/ack.vim)
+#### [ag.vim](https://github.com/rking/ag.vim)
 
-Vim plugin for the Perl module / CLI script 'ack'.
+Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module
+/ CLI script 'ack'
 
 **Command**: `,a`
 
