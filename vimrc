@@ -51,6 +51,8 @@ endif
 
 " _. General {{{
 if count(g:vimified_packages, 'general')
+    Bundle 'editorconfig/editorconfig-vim'
+
     Bundle 'rking/ag.vim'
     nnoremap <leader>a :Ag<space>
 
