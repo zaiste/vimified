@@ -87,6 +87,10 @@ Avaible packages:
 
 ### General
 
+#### [EditorConfig](https://github.com/editorconfig/editorconfig-vim)
+
+[EditorConfig](http://editorconfig.org) plugin for Vim.
+
 #### [ag.vim](https://github.com/rking/ag.vim)
 
 Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module
