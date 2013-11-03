@@ -6,6 +6,7 @@
 "
 "
 set nocompatible
+filetype on
 filetype off
 
 " Load external configuration before anything else {{{
