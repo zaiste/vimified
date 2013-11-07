@@ -55,7 +55,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'editorconfig/editorconfig-vim'
 
     Bundle 'rking/ag.vim'
-    nnoremap <leader>a :Ag<space>
+    nnoremap <leader>a :Ag -i<space>
 
     Bundle 'matthias-guenther/hammer.vim'
     nmap <leader>p :Hammer<cr>
