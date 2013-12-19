@@ -400,8 +400,8 @@ endif
 set numberwidth=3
 set winwidth=83
 set ruler
-if executable('/bin/zsh')
-  set shell=/bin/zsh\ -i
+if executable('zsh')
+  set shell=zsh\ -i
 endif
 set showcmd
 
