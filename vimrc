@@ -6,6 +6,7 @@
 "
 "
 set nocompatible
+filetype on
 filetype off
 
 " Load external configuration before anything else {{{
@@ -51,8 +52,10 @@ endif
 
 " _. General {{{
 if count(g:vimified_packages, 'general')
-    Bundle "mileszs/ack.vim"
-    nnoremap <leader>a :Ack!<space>
+    Bundle 'editorconfig/editorconfig-vim'
+
+    Bundle 'rking/ag.vim'
+    nnoremap <leader>a :Ag -i<space>
 
     Bundle 'matthias-guenther/hammer.vim'
     nmap <leader>p :Hammer<cr>
@@ -71,6 +74,8 @@ if count(g:vimified_packages, 'general')
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
+    " Keep NERDTree window fixed between multiple toggles
+    set winfixwidth
 
 
     Bundle 'kana/vim-textobj-user'
@@ -260,7 +265,12 @@ if count(g:vimified_packages, 'color')
     Bundle 'Elive/vim-colorscheme-elive'
     Bundle 'zeis/vim-kolor'
 
-    colorscheme molokai
+    " During installation the molokai colorscheme might not be avalable
+    if filereadable(globpath(&rtp, 'colors/molokai.vim'))
+      colorscheme molokai
+    else
+      colorscheme default
+    endif
 else
     colorscheme default
 endif
@@ -367,10 +377,12 @@ set ttimeout
 set ttimeoutlen=10
 
 " _ backups {{{
-set undodir=~/.vim/tmp/undo//     " undo files
-set undofile
-set undolevels=3000
-set undoreload=10000
+if has('persistent_undo')
+  set undodir=~/.vim/tmp/undo//     " undo files
+  set undofile
+  set undolevels=3000
+  set undoreload=10000
+endif
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup
@@ -379,12 +391,14 @@ set noswapfile
 
 set modelines=0
 set noeol
-set relativenumber
+if exists('+relativenumber')
+  set relativenumber
+endif
 set numberwidth=3
 set winwidth=83
 set ruler
-if executable('/bin/zsh')
-  set shell=/bin/zsh
+if executable('zsh')
+  set shell=zsh\ -i
 endif
 set showcmd
 
@@ -404,7 +418,9 @@ set shiftwidth=4
 set expandtab
 set wrap
 set formatoptions=qrn1
-set colorcolumn=+1
+if exists('+colorcolumn')
+  set colorcolumn=+1
+endif
 " }}}
 
 set visualbell
