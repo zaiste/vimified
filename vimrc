@@ -9,6 +9,10 @@ set nocompatible
 filetype on
 filetype off
 
+" Utils {{{
+source ~/.vim/functions/util.vim
+" }}}
+
 " Load external configuration before anything else {{{
 if filereadable(expand("~/.vim/before.vimrc"))
   source ~/.vim/before.vimrc
@@ -103,10 +107,11 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
+    call g:check_defined('g:airline_left_sep', '')
+    call g:check_defined('g:airline_right_sep', '')
+    call g:check_defined('g:airline_branch_prefix', '')
+
     Bundle 'bling/vim-airline'
-    let g:airline_left_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_branch_prefix = ''
 endif
 " }}}
 
