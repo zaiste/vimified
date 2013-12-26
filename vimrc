@@ -104,9 +104,6 @@ endif
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
     Bundle 'bling/vim-airline'
-    let g:airline_left_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_branch_prefix = ''
 endif
 " }}}
 
@@ -401,7 +398,7 @@ set numberwidth=3
 set winwidth=83
 set ruler
 if executable('zsh')
-  set shell=zsh\ -i
+  set shell=zsh\ -l
 endif
 set showcmd
 
