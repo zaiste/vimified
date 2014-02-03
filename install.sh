@@ -1,15 +1,14 @@
 #!/usr/env sh
 
-INSTALLDIR=$PWD
-
+INSTALLDIR=${INSTALLDIR:-"$PWD/vimified"}
 create_symlinks () {
     if [ ! -f ~/.vim ]; then
         echo "Now, we will create ~/.vim and ~/.vimrc files to configure Vim."
-        ln -sfn $INSTALLDIR/vimified ~/.vim
+        ln -sfn $INSTALLDIR ~/.vim
     fi
 
     if [ ! -f ~/.vimrc ]; then
-        ln -sfn $INSTALLDIR/vimified/vimrc ~/.vimrc
+        ln -sfn $INSTALLDIR/vimrc ~/.vimrc
     fi
   }
 
@@ -28,15 +27,15 @@ if [ "$?" != "0" ]; then
   exit 1
 fi
 
-if [ ! -d "$INSTALLDIR/vimified" ]; then
+if [ ! -d "$INSTALLDIR" ]; then
     echo "As we can't find Vimified in the current directory, we will create it."
-    git clone git://github.com/zaiste/vimified.git
+    git clone git://github.com/zaiste/vimified.git $INSTALLDIR
     create_symlinks
-    cd $INSTALLDIR/vimified
+    cd $INSTALLDIR
 
 else
     echo "Seems like you already are one of ours, so let's update Vimified to be as awesome as possible."
-    cd $INSTALLDIR/vimified
+    cd $INSTALLDIR
     git pull origin master
     create_symlinks
 fi
