@@ -198,8 +198,11 @@ endif
 
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
+    Bundle 'Rip-Rip/clang_complete'
+    Bundle 'LucHermitte/clang_indexer'
+    Bundle 'newclear/lh-vim-lib'
     Bundle 'LucHermitte/vim-clang'
-    Bundle 'vim-scripts/c.vim'
+    Bundle 'devx/c.vim'
 endif
 " }}}
 
