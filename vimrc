@@ -146,6 +146,8 @@ if count(g:vimified_packages, 'coding')
 
     Bundle 'gregsexton/gitv'
 
+    Bundle 'joonty/vdebug.git'
+
     Bundle 'scrooloose/nerdcommenter'
     nmap <leader># :call NERDComment(0, "invert")<cr>
     vmap <leader># :call NERDComment(0, "invert")<cr>
