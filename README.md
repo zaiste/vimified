@@ -1,5 +1,4 @@
-vimified
-========
+# vimified
 
 > Frankly, my dear, you're gonna be vimified one day!
 
@@ -7,8 +6,7 @@ Kick-ass Vim configuration framework, built on top of *awesome* [Vundle](https:/
 
 ![ctrlp view](http://f.cl.ly/items/3a0X3F3x3r0K1n1u1Y2r/vimified.png)
 
-How to install
---------------
+## How to install
 
 ### For lazy people
 
@@ -26,17 +24,16 @@ Grab the project:
     ln -sfn vimified/vimrc ~/.vimrc
     cd vimified
 
-Create required directories
+Create required directories:
 
     mkdir bundle
     mkdir -p tmp/backup tmp/swap tmp/undo
 
-Set up Vundle
+Set up Vundle:
 
     git clone https://github.com/gmarik/vundle.git bundle/vundle
 
-Set up your local configuration via `local.vimrc` file and choose package you
-want to use:
+Set up your `local.vimrc` file with packages you want:
 
     echo "let g:vimified_packages = ['general', 'coding', 'clojure', 'color']" > local.vimrc
 
@@ -46,8 +43,7 @@ Install plugins:
 
 Enjoy!
 
-Configuration
--------------
+## Configuration
 
 You can overwrite default configuration and key bindings by using one of following files:
 
@@ -58,10 +54,9 @@ Vimified settings take place. The idea was so people could add Bundle lines
 without having to worry about conflicts in vimrc when pulling. [Read
 More](https://github.com/zaiste/vimified/pull/27).
 
-`~/.vim/after.vimrc` will be loaded after all configuration options are set. This is best place to change vimified default behaviour (keybindings) and/or color scheme.
+`~/.vim/after.vimrc` will be loaded after all configuration options are set. This is the best place to change vimified default behaviour (key bindings) and/or color scheme.
 
-Packages
---------
+## Packages
 
 Inside your local configuration file `$HOME/.vim/local.vimrc` set `g:vimified_packages` variable with packages you want to use.
 
@@ -69,7 +64,7 @@ For example, if you are only interested in Ruby/Rails related stuff, put somethi
 
     let g:vimified_packages = ['general', 'coding', 'ruby', 'color']
 
-Avaible packages:
+Available packages:
 
  * general
  * fancy
@@ -377,7 +372,7 @@ A dark colourscheme combining Jellybeans, Solarized and Tomorrow Night.
 
 ## Call for Help
 
-If you have ideas on how to make this Vim configration framework better, don’t hesitate to fork and send pull requests. Thanks!
+If you have ideas on how to make this Vim configuration framework better, don’t hesitate to fork and send pull requests. Thanks!
 
 ### Major Contributors
 
