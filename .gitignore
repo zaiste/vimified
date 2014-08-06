@@ -3,3 +3,4 @@ bundle/
 tmp/
 .DS_Store
 *.vimrc
+.netrwhist
