@@ -327,9 +327,18 @@ pyflakes, pep8, mccabe libraries in vim to provide features like python code
 
 looking for bugs, refactoring and some other useful things.
 
-####
+### Go lang
+Support for go is now available:
 
-#### Clang
+#### [vim-go](https://github.com/fatih/vim-go)
+Full featured Go (golang) support for Vim. vim-go installs automatically all
+necessary binaries for providing seamless Vim integration . It comes with
+pre-defined sensible settings (like auto gofmt on save), has autocomplete,
+snippet support, improved syntax highlighting, go toolchain commands, etc...
+It's highly customizable and has settings for disabling/enabling features
+easily. Do not use it with other Go plugins.
+
+### Clang
 
 #### [vim-clang](https://github.com/LucHermitte/vim-clang)
 
