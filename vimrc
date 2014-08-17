@@ -173,8 +173,13 @@ if count(g:vimified_packages, 'coding')
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
+
+    " Check API docs for current word in Zeal: http://zealdocs.org/
+    nnoremap <leader>d :!zeal --query "<cword>"&<CR><CR>
 endif
 " }}}
+
+
 
 " _. Python {{{
 if count(g:vimified_packages, 'python')
