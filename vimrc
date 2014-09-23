@@ -280,6 +280,12 @@ if count(g:vimified_packages, 'elixir')
 endif
 " }}}
 
+" _. Rust {{{
+if count(g:vimified_packages, 'rust')
+    Bundle 'wting/rust.vim'
+endif
+" }}}
+
 " _. Color {{{
 if count(g:vimified_packages, 'color')
     Bundle 'sjl/badwolf'
