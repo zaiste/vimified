@@ -43,7 +43,7 @@ endif
 " VUNDLE {{{
 let s:bundle_path=s:dotvim."/bundle/"
 execute "set rtp+=".s:bundle_path."vundle/"
-call vundle#rc()
+call vundle#rc(s:bundle_path)
 
 Bundle 'gmarik/vundle'
 " }}}
