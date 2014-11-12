@@ -9,7 +9,7 @@ set nocompatible
 filetype on
 filetype off
 
-let s:dotvim = fnamemodify(globpath(&rtp, 'vimrc'), ':p:h')
+let s:dotvim = fnamemodify(globpath(&rtp, 'vimified.dir'), ':p:h')
 
 " Utils {{{
 exec ':so '.s:dotvim.'/functions/util.vim'
