@@ -20,7 +20,7 @@ Grab the project:
 
     cd
     git clone git://github.com/zaiste/vimified.git
-    ln -sfn vimified ~/.vim
+    ln -sfn vimified/ ~/.vim
     ln -sfn vimified/vimrc ~/.vimrc
     cd vimified
 
