@@ -662,16 +662,6 @@ vnoremap <leader>G :w !gist -p -t %:e \| pbcopy<cr>
 
 " }}}
 
-" TEXT OBJECTS {{{
-
-" Shortcut for [] motion
-onoremap ir i[
-onoremap ar a[
-vnoremap ir i[
-vnoremap ar a[
-
-" }}}
-
 " Load addidional configuration (ie to overwrite shorcuts) {{{
 let s:afterrc = expand(s:dotvim . '/after.vimrc')
 if filereadable(s:afterrc)
