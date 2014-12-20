@@ -67,7 +67,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'matthias-guenther/hammer.vim'
     nmap <leader>p :Hammer<cr>
 
-    Bundle 'tsaleh/vim-align'
+    Bundle 'junegunn/vim-easy-align'
     Bundle 'tpope/vim-endwise'
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-speeddating'
