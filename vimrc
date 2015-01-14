@@ -292,6 +292,12 @@ if count(g:vimified_packages, 'rust')
 endif
 " }}}
 
+" _. Elm {{{
+if count(g:vimified_packages, 'elm')
+    Bundle 'lambdatoast/elm.vim'
+endif
+" }}}
+
 " _. Color {{{
 if count(g:vimified_packages, 'color')
     Bundle 'sjl/badwolf'
