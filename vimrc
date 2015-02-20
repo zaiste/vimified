@@ -77,7 +77,6 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
-    nmap <C-i> :NERDTreeToggle<CR>
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
@@ -557,10 +556,6 @@ nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'
 " }}}
 
 " Navigation & UI {{{
-
-" Begining & End of line in Normal mode
-noremap H ^
-noremap L g_
 
 " more natural movement with wrap on
 nnoremap j gj
