@@ -467,6 +467,7 @@ set formatoptions=qrn1
 if exists('+colorcolumn')
   set colorcolumn=+1
 endif
+set cpo+=J
 " }}}
 
 set visualbell
