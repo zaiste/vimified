@@ -101,7 +101,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'vim-scripts/scratch.vim'
 
     Bundle 'troydm/easybuffer.vim'
-    nmap <leader>be :EasyBufferToggle<enter>
+    nmap <leader>be :EasyBufferToggle<cr>
 
     Bundle 'terryma/vim-multiple-cursors'
 endif
@@ -587,6 +587,8 @@ nmap <C-Up> [e
 nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
+
+nmap <tab> :NERDTreeToggle<cr>
 
 " }}}
 
