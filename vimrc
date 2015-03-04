@@ -588,6 +588,9 @@ nmap <C-Down> ]e
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
 
+" Easier buffer closing¬
+nmap q :q<cr>
+nmap wq :wq<cr>
 " }}}
 
 " . folding {{{
