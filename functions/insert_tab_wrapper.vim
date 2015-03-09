@@ -11,4 +11,6 @@ function! InsertTabWrapper()
     endif
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
-inoremap <s-tab> <c-n>
+
+" Shift+Tab decreases indentation (insert mode)
+inoremap <S-Tab> <Esc><<i
