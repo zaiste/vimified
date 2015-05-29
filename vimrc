@@ -192,7 +192,7 @@ if count(g:vimified_packages, 'python')
     Bundle 'python.vim'
     Bundle 'python_match.vim'
     Bundle 'pythoncomplete'
-    Bundle 'vim-virtualenv'
+    Bundle 'jmcantrell/vim-virtualenv'
 endif
 " }}}
 
