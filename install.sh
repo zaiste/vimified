@@ -57,7 +57,7 @@ if [ ! -f local.vimrc ]; then
 fi
 
 echo "There you are! Welcome in our world."
-echo "From now, do not hesitate to ask for help to the people behind Vimfied: https://github.com/zaiste/vimified/graphs/contributors"
+echo "From now, do not hesitate to ask for help to the people behind Vimified: https://github.com/zaiste/vimified/graphs/contributors"
 echo "We welcome any bros/sistas who want to contribute: https://github.com/zaiste/vimified#call-for-help"
 echo "Report any issue/need: https://github.com/zaiste/vimified/issues"
 echo "At last, and before all, read the documentation: http://zaiste.github.com/vimified/"
