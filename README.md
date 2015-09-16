@@ -79,6 +79,10 @@ Available packages:
  * haskell
  * elixir
  * color
+ * python
+ * go
+ * elm
+ * rust
 
 ### General
 
