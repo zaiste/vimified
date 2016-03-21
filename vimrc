@@ -113,7 +113,8 @@ if count(g:vimified_packages, 'fancy')
     "call g:Check_defined('g:airline_right_sep', '')
     "call g:Check_defined('g:airline_branch_prefix', '')
 
-    Bundle 'bling/vim-airline'
+    Bundle 'vim-airline/vim-airline'
+    Bundle 'vim-airline/vim-airline-themes'
 endif
 " }}}
 
