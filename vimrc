@@ -311,6 +311,7 @@ if count(g:vimified_packages, 'color')
     Bundle 'chriskempson/base16-vim'
     Bundle 'Elive/vim-colorscheme-elive'
     Bundle 'zeis/vim-kolor'
+    Bundle 'xero/sourcerer.vim'
 
     " During installation the molokai colorscheme might not be avalable
     if filereadable(globpath(&rtp, 'colors/molokai.vim'))
