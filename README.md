@@ -383,6 +383,10 @@ environments.
 
 A dark colourscheme combining Jellybeans, Solarized and Tomorrow Night.
 
+#### [sourcerer](https://github.com/xero/sourcerer.vim)
+
+A 16 bit dark color scheme for hackers.
+
 ## Call for Help
 
 If you have ideas on how to make this Vim configuration framework better, don’t hesitate to fork and send pull requests. Thanks!
