@@ -138,6 +138,8 @@ if count(g:vimified_packages, 'os')
     map <Leader>rl :VimuxRunLastCommand<CR>
 
     map <LocalLeader>d :call VimuxRunCommand(@v, 0)<CR>
+    au! BufNewFile,BufRead /tmp/bash-fc-* setfiletype sh
+
 endif
 " }}}
 
