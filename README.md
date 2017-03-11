@@ -189,6 +189,12 @@ lean & mean statusline for vim that's light as air
 
 A vim plugin to display the indention levels with thin vertical lines (or: any char you like).
 
+### Indent
+
+#### [indentLine](https://github.com/Yggdroot/indentLine)
+
+A vim plugin to display the indention levels with thin vertical lines (or: any char you like).
+
 ### OS
 
 #### [tmux.vim](https://github.com/zaiste/tmux.vim)
