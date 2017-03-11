@@ -45,6 +45,12 @@ let s:bundle_path=s:dotvim."/bundle/"
 execute "set rtp+=".s:bundle_path."vundle/"
 call vundle#rc(s:bundle_path)
 
+" Local vimrc configuration {{{
+let s:extrarc = expand($HOME . '/.vim/extra.vimrc')
+if filereadable(s:extrarc)
+    exec ':so ' . s:extrarc
+endif
+
 Bundle 'gmarik/vundle'
 " }}}
 
