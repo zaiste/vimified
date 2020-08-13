@@ -13,7 +13,8 @@ Simple Vim & Neovim configuration.
 
 Copy/Paste this line in your CLI:
 
-    curl -L https://raw.github.com/zaiste/vimified/master/install.sh | sh
+    curl -L https://raw.github.com/zaiste/vimified/master/install.sh > install.sh
+    sh install.sh
 
 ### For those who actually care about what is done
 
